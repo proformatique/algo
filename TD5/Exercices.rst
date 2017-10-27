@@ -49,7 +49,7 @@ Créez une procédure def afficher(tab) qui permet d'afficher les valeurs d'un t
 
 .. code-block:: python
 
-	def saisie(tab):
+	def afficher(tab):
 		taille = len(tab) # len : nombre d'éléments dans le tableau ici 3
 		lesindices = range(taille)  # intervalle des indices
 		for indice in lesindices:
