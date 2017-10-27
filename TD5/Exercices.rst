@@ -33,7 +33,9 @@ TD5
 ==========
 Créez une procédure qui permet de saisir un tableau
 
-.. code-block:: python
+
+.. code-block:: python
+
 	def saisie(tab):
 		taille = len(tab) # len : nombre d'éléments dans le tableau
 		lesindices = range(taille)  # intervalle des indices
@@ -44,7 +46,9 @@ Exercice 4
 ==========
 Créez une procédure def afficher(tab) qui permet d'afficher les valeurs d'un tableau.
 
-.. code-block:: python
+
+.. code-block:: python
+
 	def saisie(tab):
 		taille = len(tab) # len : nombre d'éléments dans le tableau ici 3
 		lesindices = range(taille)  # intervalle des indices
