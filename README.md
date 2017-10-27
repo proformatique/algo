@@ -1,2 +1,1 @@
 # algo
-exercices d'algorithmique
