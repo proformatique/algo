@@ -32,6 +32,7 @@ TD5
 Exercice 3
 ==========
 Créez une procédure qui permet de saisir un tableau
+
 .. code-block:: python
 	def saisie(tab):
 		taille = len(tab) # len : nombre d'éléments dans le tableau
