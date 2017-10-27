@@ -57,6 +57,6 @@ Créez une procédure def afficher(tab) qui permet d'afficher les valeurs d'un t
 Exercice 5
 ==========
 1. Exécuter les programmes pour corriger les erreurs de syntaxe.
-2. Utiliser l'outil http://pep8online.com pour vérifier le style du code-block proposé.
+2. Utiliser l'outil http://pep8online.com pour vérifier le style du code proposé.
 	
 
