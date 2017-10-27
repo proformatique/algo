@@ -1,5 +1,7 @@
-#TD5
-#Exercice 1
+TD5
+====
+Exercice 1
+===========
 1. Que donne le script suivant
 
 .. code:: python
@@ -10,7 +12,10 @@
 	while i < taille:
 		print(indice, "Tableau[" + str(indice) + "]=", Tableau[indice])
 
-2. Que fait la fonction str()?
 
+
+2. Que fait la fonction str()?
 3. Que fait l'opérateur +?
+
 #Exercice 2
+===========
