@@ -7,19 +7,18 @@ Parcourir un tableau
 --------------------
 Saisie
 """"""
-.. code-block:: python
+.. literalinclude:: saisie.py
+   :language: python
+   :emphasize-lines: 1,3-9
+   :linenos:
 
-    def saisie(tab):
-        taille = len(tab)
-        print('Vous allez saisir', taille, 'valeurs')
-        for i in range(taille):
-            tab[i] = eval(input('\n\t tab['+str(i)+'] = ? '))
+
 
 
 Affichage
 """""""""
 .. code-block:: python
-
+    :linenos:
     def affichage(tab):
         taille = len(tab)
         print('Affichege de ', taille, 'valeurs ')
