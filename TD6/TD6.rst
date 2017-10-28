@@ -8,8 +8,6 @@ Parcourir un tableau
 Saisie
 """"""
 .. code-block:: python
-    :linenos:
-
 
     def saisie(tab):
         taille = len(tab)
@@ -21,7 +19,6 @@ Saisie
 Affichage
 """""""""
 .. code-block:: python
-    :linenos:
 
     def affichage(tab):
         taille = len(tab)
