@@ -7,11 +7,28 @@ Parcourir un tableau
 --------------------
 Saisie
 """"""
-:: code-block
-	def f():
-		pass
+.. code-block:: python
+
+    def saisie(tab):
+        taille = len(tab)
+        print('Vous allez saisir', taille, 'valeurs')
+        for i in range(taille):
+            tab[i] = eval(input('\n\t tab['+str(i)+'] = ? '))
+
+
 Affichage
 """""""""
+.. code-block:: python
+
+    def affichage(tab):
+        taille = len(tab)
+        print('Affichege de ', taille, 'valeurs ')
+        for i in range(taille):
+            print('tab[', i, '] = ', tab[i], end='; ')
+
+
+
+
 Recherche dans un tableau
 -------------------------
 Recherche de la première occurrence
