@@ -14,7 +14,7 @@ Saisie
         print('Vous allez saisir', taille, 'valeurs')
         for i in range(taille):
             tab[i] = eval(input('\n\t tab['+str(i)+'] = ? '))
-    
+
     # Appel
     taille = 5
     A = [0] * taille
@@ -23,6 +23,7 @@ Saisie
 
 Affichage
 """""""""
+
 .. code-block:: python
 
     def affichage(tab):
@@ -30,28 +31,21 @@ Affichage
         print('Affichage de ', taille, 'valeurs ')
         for i in range(taille):
             print('tab[', i, '] = ', tab[i], sep='', end='; ')
-    
+
     # Appel
     A = [1, 2, 3, 4, 5, 8]
     affichage(A)
 
-
-
-
-
 Recherche dans un tableau
 -------------------------
-Recherche de la premi�re occurrence
+Recherche de la première occurrence
 """""""""""""""""""""""""""""""""""
 
 .. code-block:: python
 
-
     def appartient(x, tab):
         trouve = False
-        
-
-
+    
     def indice(x, tab):
         ...
 
@@ -62,18 +56,101 @@ Minimum d'un tableau
 """"""""""""""""""""
 Maximum d'un tableau
 """"""""""""""""""""
-Op�rations sur les tableaux
+Opérations sur les tableaux
 ---------------------------
-Somme des �l�ments
+Somme des éléments
 """"""""""""""""""
+
+.. code-block:: python
+
+    def somme(tab) -> float:
+        taille = len(tab)
+        som = 0.0
+        for i in range(taille):
+            som += tab[i]
+        return som
+
+    # Appel
+    taille = 5
+    A = [0] * taille
+    saisie(A)
+    print(somme(A))
+
 Somme de deux tableaux
 """"""""""""""""""""""
+.. code-block:: python
+
+    def sommeTab(A, B) -> list:
+        taille = len(A)
+        assert len(B) == taille, '/?\ Dimensions incompatibles'
+        som = [0.0] * taille  # création de tableau résultat
+        for i in range(taille):
+            som[i] = A[i] + B[i]
+        return som
+
+    # Appel
+    taille = 5
+    A = [0] * taille
+    B = [0] * taille
+    saisie(A)
+    saisie(B)
+    affichage(sommeTab(A, B))
+
 Permutation
 """""""""""
+
+.. code-block:: python
+
+    def premutation(A, i, j):
+        taille = len(A)
+        assert 0 <= i <= j < taille, '/?\ Indices invalides'
+        A[i], A[j] = A[j], A[i] # Affectation en série
+
 Permutation circulaire
 """"""""""""""""""""""
+.. code-block:: python
+
+    def premutationCirculaire(A, i_d, i_f):
+        taille = len(A)
+        assert 0 <= i_d < i_f < taille, '/?\ Indices invalides'
+        temp = A[i_d]  # On sauvegarde valeur qui sera remplacée
+        for i in range(i_d, i_f+1):
+            A[i] = A[i+1]
+        A[i_f] = temp  # On récupère la valeur sauvegardée
+
+Permutation successive
+""""""""""""""""""""""
+.. code-block:: python
+
+    def premutationSuccessive(A, i_d, i_f):
+        taille = len(A)
+        assert 0 <= i_d < i_f < taille, '/?\ Indices invalides'
+        for i in range(i_d, i_f):
+            A[i], A[i+1] = A[i+1], A[i]
+            # premutation(A, i, i+1)        #solution possible
+
 Inverse
 """""""
+
+.. code-block:: python
+
+    #premutation symétrique
+    def inverser(A):
+        taille = len(A)
+        assert type(A) == list, '/?\ Ce n\'est pas un tableau'
+        i_f = taille - 1
+        for i in range(taille//2):  # premuter les deux moitiers
+            i_c = i_f - i  # On peut utiliser ~i
+            A[i], A[i_c] = A[i_c], A[i]
+            # premutation(A, i, i_c)        #solution possible
+
 ***********
 Tableaux 2D
 ***********
+
+Définir les sous-programmes suivants :
+1. Calculer la somme d'une colonne r.
+#. Permuter deux valeurs d'indices i,j dans une colone c.
+#. Permuter deux colonnes c, n.
+#. Faites les mêmes questions pour une ligne donnée i.
+
