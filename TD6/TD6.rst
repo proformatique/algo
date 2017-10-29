@@ -14,6 +14,11 @@ Saisie
         print('Vous allez saisir', taille, 'valeurs')
         for i in range(taille):
             tab[i] = eval(input('\n\t tab['+str(i)+'] = ? '))
+    
+    # Appel
+    taille = 5
+    A = [0] * taille
+    saisie(A)
 
 
 Affichage
