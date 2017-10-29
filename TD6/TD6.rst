@@ -22,9 +22,14 @@ Affichage
 
     def affichage(tab):
         taille = len(tab)
-        print('Affichege de ', taille, 'valeurs ')
+        print('Affichage de ', taille, 'valeurs ')
         for i in range(taille):
-            print('tab[', i, '] = ', tab[i], end='; ')
+            print('tab[', i, '] = ', tab[i], sep='', end='; ')
+    
+    # Appel
+    A = [1, 2, 3, 4, 5, 8]
+    affichage(A)
+
 
 
 
