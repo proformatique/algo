@@ -43,6 +43,19 @@ Recherche dans un tableau
 -------------------------
 Recherche de la première occurrence
 """""""""""""""""""""""""""""""""""
+
+.. code-block:: python
+
+
+    def appartient(x, tab):
+        trouve = False
+        
+
+
+    def indice(x, tab):
+        ...
+
+
 Compter toutes les occurrences
 """"""""""""""""""""""""""""""
 Minimum d'un tableau
