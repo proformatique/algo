@@ -19,6 +19,7 @@ En termes mathématiques, on définit le "rendement arithmétique" comme suit :
 où
 * ```math {\displaystyle V_{i}} ``` V_i est la valeur initiale de l'investissement et
 * ```{\displaystyle V_{f}}``` V_f est la valeur finale de l'investissement
+
 Ce rendement possède les caractéristiques suivantes :
 
 * ``` math {\displaystyle RSI_{Arith}=+1.00=+100\%} RSI_{{Arith}}=+1.00=+100\% ```quand la valeur finale équivaut à deux fois la valeur initiale
