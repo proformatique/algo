@@ -86,14 +86,14 @@ Soit les carrés magiques M et N :
 1. Multiplier ces valeurs réduites par M×M. Les résultats sont reportés dans les cases de chaque sous-damier correspondant du carré final.
 1. Les cases du carré M sont additionnées N×N fois aux cases du damier final.
 
-    Soit à effectuer le « produit » de ces deux carrés magiques, un de 3×3 et l'autre de 4×4. Le carré magique final sera de 12×12.
-![Produit magique](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Magic_Squares_-_Multiplication_-_1.svg/330px-Magic_Squares_-_Multiplication_-_1.svg.png)
-
-![Produit magique 2 ](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Magic_Squares_-_Multiplication_-_2.svg/330px-Magic_Squares_-_Multiplication_-_2.svg.png)
+        Soit à effectuer le « produit » de ces deux carrés magiques, un de 3×3 et l'autre de 4×4. Le carré magique final sera de 12×12.
+    
+![Produit magique 1](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Magic_Squares_-_Multiplication_-_1.svg/330px-Magic_Squares_-_Multiplication_-_1.svg.png)
+![Produit magique 2](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Magic_Squares_-_Multiplication_-_2.svg/330px-Magic_Squares_-_Multiplication_-_2.svg.png)
 
     Le carré magique de 3×3 est remplacé par le produit 3×3, alors que chaque nombre du carré 4×4 est diminué de 1. Le damier final, de taille 12×12, est divisé en 4×4 sous-damiers, chacun ayant 3×3 cases. Chacune de ses cases s'obtient en multipliant 3×3 par l'une des cases du carré magique 4×4 « diminué ». Par exemple, 117 est le produit 3×3×13. Ce carré est magique, mais n'est pas normal. La prochaine étape va « corriger » cette « anomalie ».
     
-![Produit magique 4 ](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Magic_Squares_-_Multiplication_-_3.svg/330px-Magic_Squares_-_Multiplication_-_3.svg.png)
+![Produit magique 4](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Magic_Squares_-_Multiplication_-_3.svg/330px-Magic_Squares_-_Multiplication_-_3.svg.png)
 
     Après 4×4 additions du carré 3×3, le carré final est magique et normal.
 
