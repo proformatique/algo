@@ -2,9 +2,9 @@
 
 1. Définition
 
-    "Tableau" (array en anglais): Variable agrégeant un nombre arbitraire N de sous-variables ("composantes", "éléments") de même type
+    *Tableau* (array en anglais): Variable agrégeant un nombre arbitraire N de sous-variables (_composantes_, _éléments_) de même type
 
-    N fonction de la "dimension" D du tableau (le nombre d'indices) et de la "taille" selon chaque indice (D tailles)
+    N fonction de la _dimension_ D du tableau (le nombre d'indices) et de la _taille_ selon chaque indice (D tailles)
 
 2. Remarques
     - N égal au produit des D tailles
@@ -16,16 +16,16 @@
 
 ### Syntaxe de déclaration en dimension 1
     variables
-        nomdutableau[N] : entier ;
+        nomdutableau[N] : entier
 N: Constante entière littérale ou non littérale définissant la taille selon l'unique indice
 ### Syntaxe de déclaration en dimension 2
-    nomduTableau[N][M] : type ;
+    nomduTableau[N][M] : type
 N et M: Constantes entières littérales ou non définissant les tailles (selon chacune des 2 dimensions)
 
 ### Syntaxe de déclaration en dimension D
 
     variables
-        nomduTableau[N1][N2]...[ND] : type ;
+        nomduTableau[N1][N2]...[ND] : type
 N1, N2, ..., ND: D constantes entières littérales ou non définissant les tailles (selon chacune des n dimensions)
 
 *ATTENTION:* Non initialisation des tableaux au moment de leur déclaration (i.e. leurs composantes ne sont pas initialisées)
@@ -33,10 +33,9 @@ N1, N2, ..., ND: D constantes entières littérales ou non définissant les tail
 ### Syntaxe d'accès aux composantes d'un tableau de dimension 1
 
 En lecture ou en écriture:
-
-    variables
-        nomduTableau[indice]
-
+	debut
+		nomduTableau[indice]
+	fin
 indice : Constante entière, variable entière ou expression à résultat entier, commençant généralement de 0.
 ### Syntaxe d'accès aux composantes d'un tableau de dimension 2
 En lecture ou en écriture:
@@ -49,10 +48,10 @@ En lecture ou en écriture:
     nomTableau[i1][i2]...[iD]
 i1, i2, ..., iD: Constantes entières, variables entières ou expressions à résultat entier
 
-*"Exemples :"*
+*Exemples*
     nomTableau[0],  nomTableau[1],  nomTableau[i],  nomTableau[i+k],  nomTableau[i][k]
 
-*"ATTENTION"*
+*ATTENTION*
 : Pour un tableau de taille N, indices définis de 0 à N-1 et pas de 1 à N (sauf indication contraire le premier indice est toujours 0)
 
 1. Exemple n°1: Déclaration et initialisation d'un tableau de 8 booléens avec vrai
@@ -128,8 +127,11 @@ i1, i2, ..., iD: Constantes entières, variables entières ou expressions à ré
 
 		fonction mafonction (tab[] : entier, taille entier) : entier[]
 		Constantes
+			# liste des constantes
 		variables
+			# liste des variables
 		Début
+			# traitement
 			Retourne tab ;
 		Fin
 
@@ -137,8 +139,11 @@ i1, i2, ..., iD: Constantes entières, variables entières ou expressions à ré
 
 		procédure maprocédure (tab[] : entier, taille : entier)
 		Constantes
+			# liste des constantes
 		variables
+			# liste des variables
 		Début
+			# traitement
 		Fin
 1. Remarques  :
 
@@ -154,8 +159,8 @@ i1, i2, ..., iD: Constantes entières, variables entières ou expressions à ré
 1. Exemple :
 fonction qui retourne la valeur maximal d'un tableau passé en paramètre
 
-    fonction maxtab(tab : entier)
-
+		fonction maxtab(tab : entier)
+	
 # En python
 
 En python le type tableau n'existe pas dans la bibliothèque standard, pour implémenter la notion de tableau nous utiliserons le type ```list```, c'est possible d'utiliser aussi le type ```array``` de la bibliothèque array ou le type ```ndarray``` de la bibliothèque numpy.
