@@ -64,7 +64,7 @@ i1, i2, ..., iD: Constantes entières, variables entières ou expressions à ré
             i : entier
         debut
             pour i de 0 à 7 faire
-                tb[i] ← vrai ;
+                tb[i] ← vrai 
             finpour
         fin
 
@@ -74,17 +74,17 @@ i1, i2, ..., iD: Constantes entières, variables entières ou expressions à ré
         Algorithme tableau_factoriel_10
         # Initialisation d'un tableau d'entiers  avec les 10 premières valeurs du factoriel
         constante
-            entier N ←10 ;
+            entier N ←10 
         variables
-            tb[N] : entier ;
-            i : entier ;
+            tb[N] : entier 
+            i : entier 
         debut
-            tb[0] ← 1 ;
+            tb[0] ← 1 
             pour i de 1 à N-1 faire
-                tb[i] ←tb[i-1] * I;
+                tb[i] ←tb[i-1] * I
             finpour
             pour i de 0 à N-1 faire
-                ecrire(tb[i]) ;
+                ecrire(tb[i]) 
             finpour
         fin
 
@@ -100,22 +100,22 @@ i1, i2, ..., iD: Constantes entières, variables entières ou expressions à ré
 				# '.' pour case vide
 				# Affichage du tableau après initialisation
 			variables
-				damier[10][10] :caractère ;
+				damier[10][10] :caractère 
 				i,j : entier
 			début
 				pour i de 0 à 9 faire
 					pour j de 0 à 9 faire
-						damier[i][j] ← '.' ;
+						damier[i][j] ← '.' 
 					finpour
 				finpour
 				pour i de 0 à 8 pas 2 faire
-					damier[i][0] ← 'N';
-					damier[i+1][1] ← 'N';
-					damier[i][2] ← 'N';
-					damier[i+1][3] ← 'N';
-					damier[i][9] ← 'B';
-					damier[i+1][8] ← 'B';
-					damier[i][7] ← 'B';
+					damier[i][0] ← 'N'
+					damier[i+1][1] ← 'N'
+					damier[i][2] ← 'N'
+					damier[i+1][3] ← 'N'
+					damier[i][9] ← 'B'
+					damier[i+1][8] ← 'B'
+					damier[i][7] ← 'B'
 					damier[i+1][6] ← 'B'
 				finpour
 			fin.
@@ -124,7 +124,7 @@ i1, i2, ..., iD: Constantes entières, variables entières ou expressions à ré
 
 1. Syntaxe
 
-	Fonction qui prend un tableau d'entier en paramètre et retourne un tableau d'entier
+	Fonction qui prend un tableau d'entiers en paramètre et retourne un tableau d'entier
 
 		fonction mafonction (tab[] : entier, taille entier) : entier[]
 		Constantes
@@ -133,10 +133,10 @@ i1, i2, ..., iD: Constantes entières, variables entières ou expressions à ré
 			# liste des variables
 		Début
 			# traitement
-			Retourne tab ;
+			Retourne tab 
 		Fin
 
-	procédure qui prend un tableau d'entier en paramètre
+	procédure qui prend un tableau d'entiers en paramètre
 
 		procédure maprocédure (tab[] : entier, taille : entier)
 		Constantes
@@ -154,8 +154,8 @@ i1, i2, ..., iD: Constantes entières, variables entières ou expressions à ré
 
     Parfois on a besoins de modifier l'argument lui-même, ce qui est réalisé par un passage par référence ou le paramètre et l'argument deviennent une même chose puisque ils font référence à la même variable
 
-        X ← 8 ;
-        Y ← y ;
+        X ← 8 
+        Y ← y 
 
 1. Exemple :
 fonction qui retourne la valeur maximal d'un tableau passé en paramètre
@@ -175,10 +175,10 @@ En python le type tableau n'existe pas dans la bibliothèque standard, pour impl
     ```
 1. Remarques
 On peut :
-    - Modifier la taille d'une liste : ajouter des éléments, enlever des éléments
-    - mémoriser des valeurs de types différents
-    - On peut même mémoriser des listes pour implémenter les tableaux multidimensionnels
-    - Accéder aux éléments en utilisant des indices
+    - Modifier la taille d'une liste : ajouter des éléments, enlever des éléments.
+    - Mémoriser des valeurs de types différents.
+    - On peut même mémoriser des listes pour implémenter les tableaux multidimensionnels.
+    - Accéder aux éléments en utilisant des indices.
 
 # Les opérations sur les listes
 
@@ -187,11 +187,11 @@ On peut :
 
     L1 + L2     # concaténation
     L * 3       # répétition
-    L[i]…[x]    # indices
+    L[i]    # indices
     L[::]       # découpage
 ```
 
-## Methodes
+## Méthodes
 ```python
 
     List.append(element)
@@ -201,7 +201,7 @@ On peut :
 ```
 ## Documentation en ligne
 
-Pour voir toutes les méthodes tapez ```help(list)``` dans la console
+Pour voir toutes les méthodes tapez ```dir(list)``` dans la console, ou ```help(list)``` pour afficher la documentation.
 
 ## Fonctions
 

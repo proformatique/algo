@@ -10,11 +10,11 @@ Les premiers carrés magiques d'ordres 5 et 6 apparurent dans une encyclopédie 
 __Un exemple de carré magique normal d’ordre 3 et de constante magique 15.__
 ```python
     #Question 1.
-    def sommeRangee(CM, r) -> int:
-        '''Retourne la somme de la rangée r du carré magique CM.
+    def sommeRangee(cm, r) -> int:
+        '''Retourne la somme de la rangée r du carré magique cm.
         Donnée
         ------
-            CM : list, carré magique
+            cm : list, carré magique
             r : int, indice de la rangée
         Sortie
         ------
@@ -23,11 +23,11 @@ __Un exemple de carré magique normal d’ordre 3 et de constante magique 15.__
         #ToDo: donner le code de la fonction
     
     #Question 2.    
-    def sommeColonne(CM, c) -> int:
-        '''Retourne la somme de la colonne c du carré magique CM.
+    def sommeColonne(cm, c) -> int:
+        '''Retourne la somme de la colonne c du carré magique cm.
         Donnée
         ------
-            CM : list, carré magique
+            cm : list, carré magique
             c : int, indice de la colonne
         Sortie
         ------
@@ -36,11 +36,11 @@ __Un exemple de carré magique normal d’ordre 3 et de constante magique 15.__
         #ToDo: donner le code de la fonction
         
     #Question 3.
-    def sommeDiagPrincipale(CM, d) -> int:
+    def sommeDiagPrincipale(cm, d) -> int:
         '''Retourne la somme de la diagonale principale.
         Donnée
         ------
-            CM : list, carré magique
+            cm : list, carré magique
             d : int, 1 pour la première diagonale et 2 pour la deuxième diagonale
         Sortie
         ------
@@ -54,28 +54,28 @@ Les sommes des deux carrés magiques des mêmes ordres donnent également des ca
 
 ```python
     #Question 4.
-    def magiqueNormal(CM) -> bool:
-        '''Retourne True si CM est normal.
+    def magiqueNormal(cm) -> bool:
+        '''Retourne True si cm est normal.
         Donnée
         ------
-            CM : list, carré magique
+            cm : list, carré magique
         Sortie
         ------
-            normal : bool, True si CM est normal, sinon False.
+            normal : bool, True si cm est normal, sinon False.
         '''
         #ToDo: donner le code de la fonction
     
     #Question 5.   
-    def sommeMagic(CM1, CM2, signe) -> list:
-        '''Retourne un carrée magique somme de CM1 et CM2.
+    def sommeMagic(cm1, cm2, signe) -> list:
+        '''Retourne un carrée magique somme de cm1 et cm2.
         Données
         ------
-            CM1 : list, carré magique.
-            CM2 : list, carré magique.
+            cm1 : list, carré magique.
+            cm2 : list, carré magique.
             signe : str, signe '+' pour la somme '-' pour la soustraction
         Sortie
         ------
-            sommeMg : list, somme ou soustraction terme à terme de CM1 et CM2.
+            sommeMg : list, somme ou soustraction terme à terme de cm1 et cm2.
         '''
         #ToDo: donner le code de la fonction
 ```
@@ -103,14 +103,14 @@ Soit les carrés magiques M et N :
 
 ```python
     #Question 6.
-    def reduireCMagique(CM) -> list:
-        '''Retourne une copie de CM après réduction.
+    def reduirecmagique(cm) -> list:
+        '''Retourne une copie de cm après réduction.
         Données
         ------
-            CM : list, carré magique d'ordre M.
+            cm : list, carré magique d'ordre M.
         Sortie
         ------
-            cm_1 : list, copie réduite de CM.
+            cm_1 : list, copie réduite de cm.
         '''
         #ToDo: Donner le code de la fonction
     
@@ -129,15 +129,15 @@ Soit les carrés magiques M et N :
         #ToDo: Donner le code de la fonction
         
     #Question 8.
-    def produitMagic(CM1, CM2) -> list:
-        '''Retourne le produit de CM1 et CM2.
+    def produitMagic(cm1, cm2) -> list:
+        '''Retourne le produit de cm1 et cm2.
         Données
         ------
-            CM1 : list, carré magique d'ordre M.
-            CM2 : list, carré magique d'ordre N.
+            cm1 : list, carré magique d'ordre M.
+            cm2 : list, carré magique d'ordre N.
         Sortie
         ------
-            produitMg : list, produit de CM1 et CM2.
+            produitMg : list, produit de cm1 et cm2.
         '''
         #ToDo: Donner le code de la fonction
 
