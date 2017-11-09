@@ -93,32 +93,32 @@ i1, i2, ..., iD: Constantes entières, variables entières ou expressions à ré
 	- Pions blancs représentés par le caractère 'B'
 	- Cases vides représentées par le caractère '.'
 
-        Algorithme jeu
-            # Initialisation d'un damier de jeu de dames
-            # 'B' pour pion blanc
-            # 'N' pour pion noir
-            # '.' pour case vide
-            # Affichage du tableau après initialisation
-        variables
-            damier[10][10] :caractère ;
-            i,j : entier
-        début
-            pour i de 0 à 9 faire
-                pour j de 0 à 9 faire
-                    damier[i][j] ← '.' ;
-                finpour
-            finpour
-            pour i de 0 à 8 pas 2 faire
-                damier[i][0] ← 'N';
-                damier[i+1][1] ← 'N';
-                damier[i][2] ← 'N';
-                damier[i+1][3] ← 'N';
-                damier[i][9] ← 'B';
-                damier[i+1][8] ← 'B';
-                damier[i][7] ← 'B';
-                damier[i+1][6] ← 'B'
-            finpour
-        fin.
+			Algorithme jeu
+				# Initialisation d'un damier de jeu de dames
+				# 'B' pour pion blanc
+				# 'N' pour pion noir
+				# '.' pour case vide
+				# Affichage du tableau après initialisation
+			variables
+				damier[10][10] :caractère ;
+				i,j : entier
+			début
+				pour i de 0 à 9 faire
+					pour j de 0 à 9 faire
+						damier[i][j] ← '.' ;
+					finpour
+				finpour
+				pour i de 0 à 8 pas 2 faire
+					damier[i][0] ← 'N';
+					damier[i+1][1] ← 'N';
+					damier[i][2] ← 'N';
+					damier[i+1][3] ← 'N';
+					damier[i][9] ← 'B';
+					damier[i+1][8] ← 'B';
+					damier[i][7] ← 'B';
+					damier[i+1][6] ← 'B'
+				finpour
+			fin.
 
 # Tableau en paramètre de sous-algorithmes
 
