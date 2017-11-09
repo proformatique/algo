@@ -85,13 +85,13 @@ Soit les carrés magiques M et N :
 1. Dans le carré N, réduire de 1 la valeur de tous les nombres.
 1. Multiplier ces valeurs réduites par M×M. Les résultats sont reportés dans les cases de chaque sous-damier correspondant du carré final.
 1. Les cases du carré M sont additionnées N×N fois aux cases du damier final.
-
-        Soit à effectuer le « produit » de ces deux carrés magiques, un de 3×3 et l'autre de 4×4. Le carré magique final sera de 12×12.
-    
+   
 ![Produit magique 1](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Magic_Squares_-_Multiplication_-_1.svg/330px-Magic_Squares_-_Multiplication_-_1.svg.png)
-![Produit magique 2](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Magic_Squares_-_Multiplication_-_2.svg/330px-Magic_Squares_-_Multiplication_-_2.svg.png)
 
-    Le carré magique de 3×3 est remplacé par le produit 3×3, alors que chaque nombre du carré 4×4 est diminué de 1. Le damier final, de taille 12×12, est divisé en 4×4 sous-damiers, chacun ayant 3×3 cases. Chacune de ses cases s'obtient en multipliant 3×3 par l'une des cases du carré magique 4×4 « diminué ». Par exemple, 117 est le produit 3×3×13. Ce carré est magique, mais n'est pas normal. La prochaine étape va « corriger » cette « anomalie ».
+    Soit à effectuer le « produit » de ces deux carrés magiques, un de 3×3 et l'autre de 4×4. Le carré magique final sera de 12×12.
+![Produit magique 1](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Magic_Squares_-_Multiplication_-_2.svg/330px-Magic_Squares_-_Multiplication_-_2.svg.png)
+
+    Le carré magique de 3×3 est remplacé par le produit 3×3, alors que chaque nombre du carré 4×4 est diminué de 1. Le damier final, de taille 12×12, est divisé en 4×4 sous-damiers, chacun ayant 3×3 cases. Chacune de ses cases s'obtient en multipliant 3×3 par l'une des cases du carré magique 4×4 « diminué ». Par exemple, 117 est le produit 3×3×13. Ce carré est magique, mais n'est pas normal. La prochaine étape va « corriger » cette « anomalie ».
     
 ![Produit magique 4](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Magic_Squares_-_Multiplication_-_3.svg/330px-Magic_Squares_-_Multiplication_-_3.svg.png)
 
@@ -99,17 +99,54 @@ Soit les carrés magiques M et N :
 
 
 ```python
-
+    #Question
+    def reduireCMagique(CM) -> list:
+        '''Retourne une copie de CM après réduction.
+        Données
+        ------
+            CM : list, carré magique d'ordre M.
+        Sortie
+        ------
+            cm_1 : list, copie réduite de CM.
+        '''
+        #ToDo: Donner le code de la fonction
+    
+    def divisionMagique(i, j) -> tuple:
+        '''Retourne un tuple r, c.
+        Données
+        ------
+            i : int, indice de ligne d'une case dans le carrée d'ordre N.
+            j : int, indice de colonne d'une case dans le carrée d'ordre N.
+        Sortie
+        ------
+            r : int, premier indice du sous-carré d'ordre N dans le carré final.
+            c : int, deuxième indice du sous-carré d'ordre N dans le carré final.
+        '''
+        #ToDo: Donner le code de la fonction
+        
     #Question
     def produitMagic(CM1, CM2) -> list:
         '''Retourne le produit de CM1 et CM2.
         Données
         ------
-            CM1 : list, carré magique d'ordre M**2.
-            CM2 : list, carré magique d'ordre N**2.
+            CM1 : list, carré magique d'ordre M.
+            CM2 : list, carré magique d'ordre N.
         Sortie
         ------
             produitMg : list, produit de CM1 et CM2.
+        '''
+        #ToDo: Donner le code de la fonction
+
+    #Question
+    def additionMagic(cmf, cmm) -> list:
+        '''Retourne une copie du damier final après adition de cmm à tous les sous-damiers.
+        Données
+        ------
+            cmf : list, carré magique final d'ordre M x N.
+            cmm : list, carré magique d'ordre M.
+        Sortie
+        ------
+            cmfNormal : list, produit final normal.
         '''
         #ToDo: Donner le code de la fonction
 ```
