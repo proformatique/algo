@@ -9,6 +9,7 @@ Les premiers carrés magiques d'ordres 5 et 6 apparurent dans une encyclopédie 
 
 __Un exemple de carré magique normal d’ordre 3 et de constante magique 15.__
 ```python
+    #Question 1.
     def sommeRangee(CM, r) -> int:
         '''Retourne la somme de la rangée r du carré magique CM.
         Donnée
@@ -20,7 +21,8 @@ __Un exemple de carré magique normal d’ordre 3 et de constante magique 15.__
             sommeRg : int, somme de la rangée
         '''
         #ToDo: donner le code de la fonction
-        
+    
+    #Question 2.    
     def sommeColonne(CM, c) -> int:
         '''Retourne la somme de la colonne c du carré magique CM.
         Donnée
@@ -33,6 +35,7 @@ __Un exemple de carré magique normal d’ordre 3 et de constante magique 15.__
         '''
         #ToDo: donner le code de la fonction
         
+    #Question 3.
     def sommeDiagPrincipale(CM, d) -> int:
         '''Retourne la somme de la diagonale principale.
         Donnée
@@ -50,7 +53,7 @@ __Un exemple de carré magique normal d’ordre 3 et de constante magique 15.__
 Les sommes des deux carrés magiques des mêmes ordres donnent également des carrés magiques, mais le résultat n'est pas normal, c'est-à-dire que les nombres ne forment pas la suite 1, 2, 3... Également, la différence de deux carrés magiques du même ordre donne également un carré magique, mais qui n'est pas normal.
 
 ```python
-    #Question
+    #Question 4.
     def magiqueNormal(CM) -> bool:
         '''Retourne True si CM est normal.
         Donnée
@@ -62,7 +65,7 @@ Les sommes des deux carrés magiques des mêmes ordres donnent également des ca
         '''
         #ToDo: donner le code de la fonction
     
-    #Question   
+    #Question 5.   
     def sommeMagic(CM1, CM2, signe) -> list:
         '''Retourne un carrée magique somme de CM1 et CM2.
         Données
@@ -99,7 +102,7 @@ Soit les carrés magiques M et N :
 
 
 ```python
-    #Question
+    #Question 6.
     def reduireCMagique(CM) -> list:
         '''Retourne une copie de CM après réduction.
         Données
@@ -111,6 +114,7 @@ Soit les carrés magiques M et N :
         '''
         #ToDo: Donner le code de la fonction
     
+    #Question 7.
     def divisionMagique(i, j) -> tuple:
         '''Retourne un tuple r, c.
         Données
@@ -124,7 +128,7 @@ Soit les carrés magiques M et N :
         '''
         #ToDo: Donner le code de la fonction
         
-    #Question
+    #Question 8.
     def produitMagic(CM1, CM2) -> list:
         '''Retourne le produit de CM1 et CM2.
         Données
@@ -137,8 +141,8 @@ Soit les carrés magiques M et N :
         '''
         #ToDo: Donner le code de la fonction
 
-    #Question
-    def additionMagic(cmf, cmm) -> list:
+    #Question 9.
+    def additionMagique(cmf, cmm) -> list:
         '''Retourne une copie du damier final après adition de cmm à tous les sous-damiers.
         Données
         ------
