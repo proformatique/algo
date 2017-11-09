@@ -19,11 +19,11 @@
         nomdutableau[N] : entier
 N: Constante entière littérale ou non littérale définissant la taille selon l'unique indice
 ### Syntaxe de déclaration en dimension 2
-    nomduTableau[N][M] : type
+	variables
+		nomduTableau[N][M] : type
 N et M: Constantes entières littérales ou non définissant les tailles (selon chacune des 2 dimensions)
 
 ### Syntaxe de déclaration en dimension D
-
     variables
         nomduTableau[N1][N2]...[ND] : type
 N1, N2, ..., ND: D constantes entières littérales ou non définissant les tailles (selon chacune des n dimensions)
@@ -33,6 +33,7 @@ N1, N2, ..., ND: D constantes entières littérales ou non définissant les tail
 ### Syntaxe d'accès aux composantes d'un tableau de dimension 1
 
 En lecture ou en écriture:
+	
 	debut
 		nomduTableau[indice]
 	fin
