@@ -195,13 +195,13 @@ On peut :
 ```
 ## Documentation en ligne
 
-Pour voir toutes les méthodes tapez help(list) dans la console
+Pour voir toutes les méthodes tapez ```help(list)``` dans la console
 
 ## Fonctions
 
 Une liste est une séquence on peut donc appliquer la fonction ```len(liste)``` pour savoir sa taille
 
-De même pour savoir la taille de la dimension 2 il suffit d'appeler la fonction len(liste[0])
+De même pour savoir la taille de la dimension 2 il suffit d'appeler la fonction ```len(liste[0])```
 
 # Passage en paramètre
 
