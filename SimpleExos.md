@@ -53,6 +53,7 @@ __Un exemple de carré magique normal d’ordre 3 et de constante magique 15.__
 Les sommes des deux carrés magiques des mêmes ordres donnent également des carrés magiques, mais le résultat n'est pas normal, c'est-à-dire que les nombres ne forment pas la suite 1, 2, 3... Également, la différence de deux carrés magiques du même ordre donne également un carré magique, mais qui n'est pas normal.
 
 ```python
+
 	#Question 4.a
 	def magique(cm) -> bool:
 		'''Retourne True si cm est magique.
