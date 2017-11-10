@@ -54,17 +54,17 @@ Les sommes des deux carrés magiques des mêmes ordres donnent également des ca
 
 ```python
 
-	#Question 4.a
-	def magique(cm) -> bool:
-		'''Retourne True si cm est magique.
-		Donnée
-		------
-			cm : list, carré d'ordre N.
-		Sortie
-		------
-			magique : bool, True si cm est magique, sinon False.
-		'''
-		#ToDo: donner le code de la fonction
+    #Question 4.a
+    def magique(cm) -> bool:
+        '''Retourne True si cm est magique.
+        Donnée
+        ------
+            cm : list, carré d'ordre N.
+        Sortie
+        ------
+            magique : bool, True si cm est magique, sinon False.
+        '''
+        #ToDo: donner le code de la fonction
 
     #Question 4.b
     def magiqueNormal(cm) -> bool:
