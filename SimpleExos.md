@@ -53,7 +53,19 @@ __Un exemple de carré magique normal d’ordre 3 et de constante magique 15.__
 Les sommes des deux carrés magiques des mêmes ordres donnent également des carrés magiques, mais le résultat n'est pas normal, c'est-à-dire que les nombres ne forment pas la suite 1, 2, 3... Également, la différence de deux carrés magiques du même ordre donne également un carré magique, mais qui n'est pas normal.
 
 ```python
-    #Question 4.
+	#Question 4.a
+	def magique(cm) -> bool:
+		'''Retourne True si cm est magique.
+		Donnée
+		------
+			cm : list, carré d'ordre N.
+		Sortie
+		------
+			magique : bool, True si cm est magique, sinon False.
+		'''
+		#ToDo: donner le code de la fonction
+
+    #Question 4.b
     def magiqueNormal(cm) -> bool:
         '''Retourne True si cm est normal.
         Donnée
@@ -103,7 +115,7 @@ Soit les carrés magiques M et N :
 
 ```python
     #Question 6.
-    def reduirecmagique(cm) -> list:
+    def reduireCMagique(cm) -> list:
         '''Retourne une copie de cm après réduction.
         Données
         ------
@@ -119,8 +131,8 @@ Soit les carrés magiques M et N :
         '''Retourne un tuple r, c.
         Données
         ------
-            i : int, indice de ligne d'une case dans le carrée d'ordre N.
-            j : int, indice de colonne d'une case dans le carrée d'ordre N.
+            i : int, ligne dans le carré final d'ordre M x N.
+            j : int, colonne dans le carré final d'ordre M x N.
         Sortie
         ------
             r : int, premier indice du sous-carré d'ordre N dans le carré final.
@@ -129,7 +141,7 @@ Soit les carrés magiques M et N :
         #ToDo: Donner le code de la fonction
         
     #Question 8.
-    def produitMagic(cm1, cm2) -> list:
+    def produitMagique(cm1, cm2) -> list:
         '''Retourne le produit de cm1 et cm2.
         Données
         ------
