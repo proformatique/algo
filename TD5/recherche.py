@@ -1,8 +1,12 @@
-'''
-Algorithmes de base : Manipulation des tableaux à une dimension
+'''Algorithmes de base : Manipulation des tableaux à une dimension.
 A. MHAMEDI
 LYDEX 2017/18
+Objectifs:
+    1 Comment parcourir un tableau? accès aux éléments
+    2 Comment construir un résultat petit à petit? méthode incrémentale
+    3 Comment rechercher un éléments dans un tableau? méthode de recherche
 '''
+
 
 ## PARCOURS : Lecture
 def saisie(tab):
@@ -102,8 +106,8 @@ def appartient(x, tab) -> bool:
     True
     '''
     trouve = False
-    for elm in tab:
-        if elm == x:
+    for elm in tab:         # PARCOURS
+        if elm == x:        # COMPARAISON
             trouve = True
             break
     return trouve
@@ -132,8 +136,8 @@ def indice(x, tab) -> int:
     True
     '''
     ind = -1  # x n'est pas trouvés
-    for i, elm in enumerate(tab):
-        if elm == x:
+    for i, elm in enumerate(tab):  # PARCOURS
+        if elm == x:               # COMPARAISON
             ind = i
             break
     return ind
@@ -162,8 +166,8 @@ def compter(x, tab) -> int:
     True
     '''
     cpt = 0
-    for elm in tab:
-        if elm == x:
+    for elm in tab:         # PARCOURS
+        if elm == x:        # COMPARAISON
             cpt += 1
     return cpt
 
@@ -188,8 +192,8 @@ def min(tab) -> int:
     True
     '''
     mn = tab[0]  # minimum provisoire
-    for i in range(1, len(tab)):
-        if tab[i] < mn:
+    for i in range(1, len(tab)):    # PARCOURS
+        if tab[i] < mn:             # COMPARAISON
             mn = tab[i]
     return mn
 
