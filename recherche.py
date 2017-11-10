@@ -102,7 +102,10 @@ def min(tab) -> int:
         if tab[i] < mn:
             mn = tab[i]
     return mn
+<<<<<<< HEAD
     
+=======
+>>>>>>> TD6
 
 ##
 def max(tab) -> int:
