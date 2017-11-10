@@ -1,6 +1,6 @@
 ## PARCOURS : Lecture
 def saisie(tab):
-    taille = len(tab) # variable locale
+    taille = len(tab)  # variable locale
     print('Vous allez saisir', taille, 'valeurs')
     for i in range(taille):
         tab[i] = eval(input('\n\t tab['+str(i)+'] = ? '))
@@ -10,6 +10,7 @@ taille = 5  # variable globale
 A = [0] * taille
 saisie(A)
 
+
 ## PARCOURS : Ecriture
 def affichage(tab):
     taille = len(tab)
@@ -18,10 +19,10 @@ def affichage(tab):
         print('tab[', i, '] = ', tab[i], sep='', end='; ')
 
 
-
 # Appel
 A = [1, 2, 3, 4, 5, 8]
 affichage(A)
+
 
 ## RECHERCHE : Appartenance
 def appartient(x, tab) -> bool:
@@ -46,12 +47,14 @@ def appartient(x, tab) -> bool:
             trouve = True
             break
     return trouve
-    
-t = [1, 2, 2, 5, 2,]
+
+# Appel
+t = [1, 2, 2, 5, 2, 8]
 x = 2
 
 resultat = appartient(x, t)
-print(x, 'appartient au tableau ?', resultat)    
+print(x, 'appartient au tableau ?', resultat)
+
 
 ## RECHERCHE : Indice
 def indice(x, tab) -> int:
@@ -68,19 +71,21 @@ def indice(x, tab) -> int:
     >>> indice(0, [0, 5, 8]) == 0
     True
     '''
-    ind = -1 # x n'est pas trouvés
+    ind = -1  # x n'est pas trouvés
     for i, elm in enumerate(tab):
         if elm == x:
             ind = i
             break
     return ind
-    
+
+
 # Appel
-t = [1, 2, 2, 5, 2,]
+t = [1, 2, 2, 5, 2, 8]
 x = 2
 
 resultat = indice(x, t)
 print('L\'indice de', x, 'est', resultat)
+
 
 ## RECHERCHE : Comptage
 def compter(x, tab) -> int:
@@ -103,11 +108,12 @@ def compter(x, tab) -> int:
     return cpt
 
 # Appel
-t = [1, 2, 2, 5, 2,]
+t = [1, 2, 2, 5, 2, 8]
 x = 2
 
 resultat = compter(x, t)
 print('Le nombre d\'occurrences de', x, 'est', resultat)
+
 
 ## RECHERCHE : Minimum
 # Attention une fonction pédéfinie min existe déjà sera remplacée.
@@ -121,17 +127,17 @@ def min(tab) -> int:
     >>> min([0, 5, 8]) == 0
     True
     '''
-    mn = tab[0] # minimum provisoire
+    mn = tab[0]  # minimum provisoire
     for i in range(1, len(tab)):
         if tab[i] < mn:
             mn = tab[i]
     return mn
 
 # Appel
-t = [1, 2, 2, 5, 2,]
+t = [1, 2, 2, 5, 2, 8]
 
 resultat = min(t)
-print('Le minimum est',resultat)
+print('Le minimum est', resultat)
 
 
 ## RECHERCHE : Maximum
@@ -149,16 +155,15 @@ def max(tab) -> int:
     >>> max([0, 5, 8]) == 8
     True
     '''
-    assert len(tab) > 0, 'Tabbleau vide'
-    mx = tab[0]         # maximum provisoire
+    assert len(tab) > 0, 'Tableau vide'
+    mx = tab[0]          # maximum provisoire
     for i in range(1, len(tab)):
         if tab[i] > mx:
-            mx = tab[i] # maximum provisoire
+            mx = tab[i]  # maximum provisoire
     return mx
 
 # Appel
-t = [1, 2, 2, 5, 2,]
+t = [1, 2, 2, 5, 2, 8]
 
 resultat = max(t)
-print('Le maximum est', resultat)    
-
+print('Le maximum est', resultat)
