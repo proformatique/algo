@@ -24,6 +24,60 @@ A = [1, 2, 3, 4, 5, 8]
 affichage(A)
 
 
+## METHODE INCREMENTALE : Somme
+def somme(Notes) -> float:
+    '''Calcule la somme des notes.
+    Données:
+    -------
+        Notes : list, tableaux des notes
+        taille: int, nombre des notes
+        indice: int, indice d'une note dans le tableau
+    Sortie:
+    -------
+        somme : float, somme des notes.
+    Exemples:
+    --------
+    >>> somme([15.2, 14.75, 20.0])
+    49.95
+    '''
+    taille = len(Notes)
+    # Méthode incrémentale :
+    somme = 0                       # 1. Initialisation du résultat
+    for indice in range(taille):
+            somme += Notes[indice]  # 2. Construction du résultat
+            indice += 1
+    return somme                    # 3. Renvoi du résultat final
+
+
+# Appel
+A = [15.2, 14.75, 20.0]
+
+resultat = somme(A)
+print('La somme est :', resultat)
+
+
+## Moyenne
+def moyenne(Notes) -> float:
+    '''Calcule la moyenne des notes.
+    Données:
+    -------
+        Notes : list, tableaux des notes
+        taille: int, nombre des notes
+        som : float, somme des notes.
+    Sortie:
+    -------
+        moy : float, moyenne des notes.
+    Exemples:
+    --------
+    >>> moyenne([15.25, 17.50, 19.0])
+    17.25
+    '''
+    taille = len(Notes)
+    som = somme(Notes)
+    moy = som / taille
+    return moy
+
+
 ## RECHERCHE : Appartenance
 def appartient(x, tab) -> bool:
     '''Teste si x fait partie de tab.
