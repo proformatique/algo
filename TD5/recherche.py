@@ -1,3 +1,4 @@
+## PARCOURS : Lecture
 def saisie(tab):
     taille = len(tab) # variable locale
     print('Vous allez saisir', taille, 'valeurs')
@@ -9,19 +10,20 @@ taille = 5  # variable globale
 A = [0] * taille
 saisie(A)
 
-##
+## PARCOURS : Ecriture
 def affichage(tab):
     taille = len(tab)
     print('Affichage de ', taille, 'valeurs ')
     for i in range(taille):
         print('tab[', i, '] = ', tab[i], sep='', end='; ')
 
+
+
 # Appel
 A = [1, 2, 3, 4, 5, 8]
 affichage(A)
 
-
-
+## RECHERCHE : Appartenance
 def appartient(x, tab) -> bool:
     '''Teste si x fait partie de tab.
     Donnée
@@ -45,8 +47,13 @@ def appartient(x, tab) -> bool:
             break
     return trouve
     
-    
-##
+t = [1, 2, 2, 5, 2,]
+x = 2
+
+resultat = appartient(x, t)
+print(x, 'appartient au tableau ?', resultat)    
+
+## RECHERCHE : Indice
 def indice(x, tab) -> int:
     '''Retourne l'indice du premier x dans tab.
     Données
@@ -67,7 +74,15 @@ def indice(x, tab) -> int:
             ind = i
             break
     return ind
-##
+    
+# Appel
+t = [1, 2, 2, 5, 2,]
+x = 2
+
+resultat = indice(x, t)
+print('L\'indice de', x, 'est', resultat)
+
+## RECHERCHE : Comptage
 def compter(x, tab) -> int:
     '''Retourne le nombre d'occurrences x dans tab.
     Données
@@ -86,7 +101,16 @@ def compter(x, tab) -> int:
         if elm == x:
             cpt += 1
     return cpt
-##
+
+# Appel
+t = [1, 2, 2, 5, 2,]
+x = 2
+
+resultat = compter(x, t)
+print('Le nombre d\'occurrences de', x, 'est', resultat)
+
+## RECHERCHE : Minimum
+# Attention une fonction pédéfinie min existe déjà sera remplacée.
 def min(tab) -> int:
     '''Retourne le minimum d'un tab.
     Données
@@ -102,12 +126,16 @@ def min(tab) -> int:
         if tab[i] < mn:
             mn = tab[i]
     return mn
-<<<<<<< HEAD
-    
-=======
->>>>>>> TD6
 
-##
+# Appel
+t = [1, 2, 2, 5, 2,]
+
+resultat = min(t)
+print('Le minimum est',resultat)
+
+
+## RECHERCHE : Maximum
+# Attention une fonction pédéfinie max existe déjà sera remplacée.
 def max(tab) -> int:
     '''Retourne le maximum d'un tableau.
     Données
@@ -127,9 +155,10 @@ def max(tab) -> int:
         if tab[i] > mx:
             mx = tab[i] # maximum provisoire
     return mx
-    
-t = [1, 2, 2, 5, 2,]
-x = 2
 
-resultat = indice(x, t)
-print(resultat)
+# Appel
+t = [1, 2, 2, 5, 2,]
+
+resultat = max(t)
+print('Le maximum est', resultat)    
+
