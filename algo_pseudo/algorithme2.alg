@@ -1,5 +1,5 @@
-﻿^ Activité 3 : SRTUCTURES DE CONTROLE DE FLUX      
-^               & SOUS-ALGORITHMES                  		   
+﻿# Activité 3 : SRTUCTURES DE CONTROLE DE FLUX      
+#               & SOUS-ALGORITHMES                  		   
 
 fonction produit(A: entier, B : entier): entier
 variables 
@@ -28,7 +28,7 @@ debut
 fin
 
 
-^ *************************    Boucle POUR *******************************^
+# *************************    Boucle POUR *******************************^
 
 fonction produit(A: entier, B : entier): entier
 variables 
@@ -51,7 +51,7 @@ variables
     res : entier ← 1        {résultat}
 	cpt : entier 		    {compteur}
 debut
-	pour cpt ← 0 à B pas ← 1 faire   
+	pour cpt ← 0 jusqua B pas ← 1 faire   
 		res ← res * A
 	finpour
 	retourne res
@@ -80,15 +80,23 @@ debut
 	retourne som
 fin
 
-^ TRANSCRIPTION EN PYTHON^
-pour  	
+# TRANSCRIPTION EN PYTHON 
+
+pour variable ← 0 jusqua 10 faire
+
+finpour
+
 for cpt in seq:
 	bloc
-la séquence peut être :
-seq = range(start=0, stop, step=1)
-seq = "texte"
+	
+# la séquence peut être :
+# seq = range(start=0, stop, step=1)
+# seq = "texte"
 
-tantque
+tantque condition faire
+    bloc
+fintq
+	
 while condition:
 	bloc
 
