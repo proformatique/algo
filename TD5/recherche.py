@@ -1,3 +1,9 @@
+'''
+Algorithmes de base : Manipulation des tableaux à une dimension
+A. MHAMEDI
+LYDEX 2017/18
+'''
+
 ## PARCOURS : Lecture
 def saisie(tab):
     taille = len(tab)  # variable locale
