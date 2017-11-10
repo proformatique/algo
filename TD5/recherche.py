@@ -4,7 +4,7 @@ LYDEX 2017/18
 Objectifs:
     1 Comment parcourir un tableau? accès aux éléments
     2 Comment construir un résultat petit à petit? méthode incrémentale
-    3 Comment rechercher un éléments dans un tableau? méthode de recherche
+    3 Comment rechercher un élément dans un tableau? méthode de recherche
 '''
 
 
