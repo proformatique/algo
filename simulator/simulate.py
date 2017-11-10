@@ -38,17 +38,18 @@ class varlist:
         dv = self.getValues()
         self.data.append(dv)
     
-    def save(self, mode):
+    def save(self, mode, file ="fiche.html"):
         mode = "w" if mode else "a"
         t = "<hr/><table width=100%><tr><th width=20%><h3>Listing "+str(varlist.count)+":</h3></th><th width=20%><h3>simulation d\'exécution "+str(varlist.count)+":</h3></th><th width=40%><h3>Commentaires</h3></th></tr><tr><td><pre>{}</pre></td><td>{}</td><td><hr/><br><hr/><br><hr/><br><hr/><br><hr/><br><hr/><br><hr/><br></td></tr></table>"
         t = t.format(self.code, self.getGui())
-        with open("fiche.html", mode, encoding='utf-8') as f:
+        with open(file, mode, encoding='utf-8') as f:
             f.write(t)
     
-    def saveDemo(self, mode, file=r'E:\lydex\local\algo\demos\demo_all.py'):
+    def saveDemo(self, mode, file='demo_all.py'):
         mode = "w" if mode else "a"
         t = "# <demo> stop\n # Script \n{}"
         t = t.format(self.code)
+        file = r"E:\lydex\local\algo\demos" + '\\' + file 
         with open(file, mode, encoding='utf-8') as f:
             f.write(t)
         
@@ -66,9 +67,28 @@ def purify(code, var):
     cd = cd.replace('#:v', '')
     cd = cd.replace(';', '')
     return cd
+
+import sys
+import IPython
+from os.path import dirname, realpath
+from os import listdir 
+def menu(titre, options, message, c=1):
+    print('{:*^80}'.format(titre.upper()))
+    mnu = ''
+    for i in range(len(options)):
+        mnu+="{:2}-{:10}".format(i+1,options[i][5:-2])
+        if i % c != 0:
+            mnu += '\n'
+    print(mnu+ '\n'+'-' * 80)
+    return int(input(message + ' : ')) - 1
     
-path='codes2simulate.py'
+pth = realpath(dirname(sys.argv[0]))
+demos = [file for file in listdir(pth) if file.startswith('code')]
+choix = menu('Demos', demos, 'Choisissez la demo : ')
+path = demos[choix]
+
 with open(path) as cs:
+    exec(open(path).read())
     code = cs.read().split('##:s')
     spy = [None] * len(code)
     for vi in range(len(code)):

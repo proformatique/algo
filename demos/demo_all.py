@@ -44,7 +44,7 @@ while True:
     condition = nombre != 0
     if not condition:
         break
-print("Nombre de zéro : ", cpt)
+print("Nombre de zÃ©ro : ", cpt)
 
 # <demo> stop
  # Script 
@@ -81,7 +81,7 @@ while True:
     condition = nombre != 0
     if not condition:
         break
-    estArmstrong = somme == N
+estArmstrong = somme == N
 print(N, ' est un nombre d\'Armstrong ', estArmstrong)
 
 # <demo> stop
