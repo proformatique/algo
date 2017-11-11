@@ -27,7 +27,6 @@ class varlist:
         self.code = code
     
     def getGui(self):
-        print(self.data)
         for dv in self.data:
             space = ('.',) * len(dv)
             ln = '<td><span class="hide">{!s}</span></td>' * len(dv)
@@ -59,7 +58,8 @@ class varlist:
     def saveDemo(self, mode, file='demo_all.py'):
         mode = "w" if mode else "a"
         t = "\n# <demo> stop\n # Script \n{}"
-        t = t.format(self.code)
+        cd = self.code.replace("# APPEL", '\n# <demo> stop\n# APPEL')
+        t = t.format(cd)
         file = varlist.demodist + file 
         with open(file, mode, encoding='utf-8') as f:
             f.write(t)
@@ -77,7 +77,7 @@ def purify(code, var):
     cd = cd.replace(varlist.sepl2, '# BPoint')
     cd = cd.replace(varlist.sepl, '# BPoint')
     cd = cd.replace(varlist.sepv, '')
-    cd = cd.replace('# <demo> stop', '')
+    cd = cd.replace(varlist.sepa, '# APPEL')
     return cd
 
 import sys
@@ -85,38 +85,46 @@ import IPython
 from os.path import dirname, realpath
 from os import listdir 
 def menu(titre, options, message, c=1):
-    print('{:*^80}'.format(titre.upper()))
+    print('{:*^40}'.format(titre.upper()))
     mnu = ''
     for i in range(len(options)):
-        mnu+="{:2}-{:10}".format(i+1,options[i][5:-2])
+        mnu+="{:2}-{:10}".format(i+1,options[i][6:-3])
         if i % c != 0:
             mnu += '\n'
-    print(mnu+ '\n'+'-' * 80)
-    return int(input(message + ' : ')) - 1
+    print(mnu+ '\n'+'-' * 40)
+    try:
+        return int(input(message + ' : ')) - 1
+    except:
+        return -1
     
 pth = realpath(dirname(sys.argv[0])) + varlist.src
 demos = [file for file in listdir(pth) if file.startswith('code')]
 if demos:
-    choix = menu('Demos', demos, 'Choisissez la soucea ')
-    path = demos[choix] 
-    with open(varlist.src + path) as cs:
-        exec(open(varlist.src + path).read())
-        code = cs.read().split(varlist.seps)
-        spy = [None] * len(code)
-        for vi in range(len(code)):
-            var = code[vi].split()
-            var = var[0].replace(varlist.sepv, '')
-            cd  = purify(code[vi], var)
-            spy[vi] = varlist(eval(var))
-            d = code[vi]
-            d = d.replace(varlist.sepl2, '; spy[{0}].withinloop()')
-            d = d.replace(varlist.sepl, 'spy[{0}].withinloop()')
-            d = d.replace(varlist.sepa, '\n# <demo> stop\n# APPEL')
-            d = d.format(vi)
-            exec(d)
-            spy[vi].setCode(cd)
-            spy[vi].save(False, file=path[:-3] + ".html")
-            spy[vi].saveDemo(False, file="demo_" + path[5:])
+    while True:
+        choix = menu('SOURCES', demos, 'Choisissez la source ')
+        if choix < 0 or choix >= len(demos):
+            if input('Voulez-vous quitter? (y/n) ') != 'n':
+                print('Ok! bye')
+                break 
+        else:
+            path = demos[choix] 
+            with open(varlist.src + path) as cs:
+                exec(open(varlist.src + path).read())
+                code = cs.read().split(varlist.seps)
+                spy = [None] * len(code)
+                for vi in range(len(code)):
+                    var = code[vi].split()
+                    var = var[0].replace(varlist.sepv, '')
+                    cd  = purify(code[vi], var)
+                    spy[vi] = varlist(eval(var))
+                    d = code[vi]
+                    d = d.replace(varlist.sepl2, '; spy[{0}].withinloop()')
+                    d = d.replace(varlist.sepl, 'spy[{0}].withinloop()')
+                    d = d.format(vi)
+                    exec(d)
+                    spy[vi].setCode(cd)
+                    spy[vi].save(False, file=path[:-3] + ".html")
+                    spy[vi].saveDemo(False, file="demo_" + path[5:])
 else:
     print('Pas de sources')
         

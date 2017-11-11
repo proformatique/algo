@@ -8,3 +8,6 @@ a.insert(i,a.pop(a.index(min(a[i:])))); i += 1  ##bp:
 a.insert(i,a.pop(a.index(min(a[i:])))); i += 1  ##bp:
 a.insert(i,a.pop(a.index(min(a[i:])))); i += 1  ##bp:
 a.insert(i,a.pop(a.index(min(a[i:])))); i += 1  ##bp:
+
+#A:
+print(a)
