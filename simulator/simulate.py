@@ -101,6 +101,6 @@ with open(path) as cs:
         d = d.format(vi)
         exec(d)
         spy[vi].setCode(cd)
-        spy[vi].save(False)
-        spy[vi].saveDemo(False)
+        spy[vi].save(False, file=path+".html")
+        spy[vi].saveDemo(False, file="demo_"+path[5:])
         
