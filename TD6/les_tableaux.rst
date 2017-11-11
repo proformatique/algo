@@ -88,6 +88,7 @@ Minimum d'un tableau
 Maximum d'un tableau
 """"""""""""""""""""
 .. code-block:: python
+
     ## RECHERCHE : Maximum
     # Attention une fonction pédéfinie max existe déjà sera remplacée.
     def max(tab) -> int:
