@@ -194,11 +194,13 @@ On peut :
 ## Méthodes
 ```python
 
-    List.append(element)
-    L.append(object)    # ajoute un objet à la fin
-    L.count(value)      # integer – retourne le nombre d'occurrences de value
-    L.extend(iterable)  # étend la liste en ajoutant des éléments à partir d'uniterable
+    L.append(x)        # Ajoute un objet à la fin
+    L.count(x)         # Integer – retourne le nombre d'occurrences de value
+    L.extend(liste)    # Etend la liste en ajoutant des éléments à partir d'un iterable
+    L.pop(i)           # Enlève et renvoie l’élément d'indice i. Si aucun indice n’est indiqué sinon le dernier élément.
+    L.insert(i, x)     # Insère un élément x à la position indiquée i.
 ```
+
 ## Documentation en ligne
 
 Pour voir toutes les méthodes tapez ```dir(list)``` dans la console, ou ```help(list)``` pour afficher la documentation.
