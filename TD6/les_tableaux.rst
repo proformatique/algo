@@ -58,43 +58,64 @@ Compter toutes les occurrences
 """"""""""""""""""""""""""""""
 Minimum d'un tableau
 """"""""""""""""""""
+.. code-block:: python
 
-Spécification du minimum ::
-    
-    Donnée :
-        N Entier la taille du tableau
-        A Tableau[1..N]
-    Sortie : m la valeur minimale du tableau
-    
-    PreCondition : Vrai
-    postCondition : 
+    # RECHERCHE : Minimum
+    # Attention une fonction pédéfinie min existe déjà sera remplacée.
+    def min(tab) -> int:
+        '''Retourne le minimum d'un tab.
+        Données
+            tab: list, tableau d'entiers
+        Sorite
+            mn : int, valeur minimale
+        Exemples
+        >>> min([0, 5, 8]) == 0
+        True
+        '''
+        mn = tab[0]  # minimum provisoire
+        for i in range(1, len(tab)):    # PARCOURS
+            if tab[i] < mn:             # COMPARAISON
+                mn = tab[i]
+        return mn
 
-.. math::
+    # Appel
+    t = [1, 2, 2, 5, 2, 8]
 
-    I = [1..N] \\
-.. math::
-
-    m = A[i]  \\
-.. math::
-
-    m = \min(A) \Rightarrow \forall j \in I, A[i] \leq A[j]
-
-.. literalinclude:: func.py
-   :linenos:
-   :language: python
-   :start-after: Func1
-   :end-before: # Func2
-   :emphasize-lines: 1, 2
-
-.. literalinclude:: func.py
-   :linenos:
-   :language: python
-   :start-after: Func2
-   :emphasize-lines: 2
-    
+    resultat = min(t)
+    print('Le minimum est', resultat)
+  
     
 Maximum d'un tableau
 """"""""""""""""""""
+.. code-block:: python
+    ## RECHERCHE : Maximum
+    # Attention une fonction pédéfinie max existe déjà sera remplacée.
+    def max(tab) -> int:
+        '''Retourne le maximum d'un tableau.
+        Données
+        -------
+            tab: list, tableau d'entiers
+        Sorite
+        ------
+            mx : int, valeur maximale
+        Exemples
+        --------
+        >>> max([0, 5, 8]) == 8
+        True
+        '''
+        assert len(tab) > 0, 'Tableau vide'
+        mx = tab[0]          # maximum provisoire
+        for i in range(1, len(tab)):
+            if tab[i] > mx:
+                mx = tab[i]  # maximum provisoire
+        return mx
+
+    # Appel
+    t = [1, 2, 2, 5, 2, 8]
+
+    resultat = max(t)
+    print('Le maximum est', resultat)
+    
 Opérations sur les tableaux
 ---------------------------
 Somme des éléments
@@ -182,31 +203,3 @@ Inverse
             i_c = i_f - i  # On peut utiliser ~i
             A[i], A[i_c] = A[i_c], A[i]
             # premutation(A, i, i_c)        # solution possible
-
-Algorithmes de tri
-==================
-Tri par séléction
-------------------
-
-Tri par insertion
-------------------
-
-Tri à bulles
-------------------
-
-***********
-Tableaux 2D
-***********
-
-Définir les sous-programmes suivants :
-
-1. Calculer la somme d'une colonne r.
-
-#. Permuter deux valeurs d'indices i,j dans une colone c.
-
-#. Permuter deux colonnes c, n.
-
-#. Faites les mêmes questions pour une ligne donnée i.
-
-.. image:: https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Magic_Squares_-_4x4_-_Permutations.svg/550px-Magic_Squares_-_4x4_-_Permutations.svg.png
-
