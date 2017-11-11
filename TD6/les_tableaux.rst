@@ -208,3 +208,5 @@ Définir les sous-programmes suivants :
 
 #. Faites les mêmes questions pour une ligne donnée i.
 
+.. image:: https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Magic_Squares_-_4x4_-_Permutations.svg/550px-Magic_Squares_-_4x4_-_Permutations.svg.png
+
