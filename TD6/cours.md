@@ -165,7 +165,7 @@ On peut :
     L.append(x)        # Ajoute un objet à la fin
     L.count(x)         # Integer – retourne le nombre d'occurrences de value
     L.extend(liste)    # Etend la liste en ajoutant des éléments à partir d'un iterable
-    L.pop(i)           # Enlève et renvoie l’élément d'indice i. Si aucun indice n’est indiqué sinon le dernier élément.
+    L.pop(i)           # Enlève et renvoie l’élément d'indice i. Sinon le dernier élément.
     L.insert(i, x)     # Insère un élément x à la position indiquée i.
 ```
 
