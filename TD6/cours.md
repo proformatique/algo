@@ -132,7 +132,7 @@ fonction qui retourne la valeur maximal d'un tableau passé en paramètre
 	
 # En python
 
-En python le type tableau n'existe pas dans la bibliothèque standard, pour implémenter la notion de tableau nous utiliserons le type ```list```, c'est possible d'utiliser aussi le type ```array``` de la bibliothèque array ou le type ```ndarray``` de la bibliothèque numpy.
+En python le type tableau n'existe pas dans la bibliothèque standard ```builtins``` chargée automatiqument, pour implémenter la notion de tableau nous utiliserons le type ```list```, c'est possible d'utiliser aussi le type ```array``` de la bibliothèque array ou le type ```ndarray``` de la bibliothèque numpy.
 
 1. Syntaxe
     ```python
