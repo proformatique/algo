@@ -5,28 +5,32 @@ Objectifs:
     1 - Opérations sur les tableaux à 2D?
         - Produit terme à terme
         - Somme terme à terme
-    3 - Calcul matriciel
+    2 - Calcul matriciel
         - Trace
         - diagonale
         - produit
 '''
+
+
+#TODO : Ajouter les docstrings, les commentaires, les tests
 def saisie2D(D2):
     Nl = len(D2)
     Nc = len(D2[0])
-    print('Saisie de tableau de dim. (',Nl, 'x', Nc,')')
+    print('Saisie de tableau de dim. (', Nl, 'x', Nc, ')')
     for i in range(Nl):
         for j in range(Nc):
             D2[i][j] = eval(input(str(i)+', '+str(j)+'? '))
-        
+
+
 def affichage2D(D2):
     Nl = len(D2)
     Nc = len(D2[0])
-    print('Affichage de tableau de dim. (',Nl, 'x', Nc,')')
+    print('Affichage de tableau de dim. (', Nl, 'x', Nc, ')')
     for i in range(Nl):
         for j in range(Nc):
-            print('(',i,',',j,') = ',D2[i][j])
-        
-    
+            print('(', i, ',', j, ') = ', D2[i][j])
+
+
 def diagonale(D2) -> list:
     Nl = len(D2)
     Nc = len(D2[0])
@@ -38,6 +42,7 @@ def diagonale(D2) -> list:
         # D += [D2[i][i]] # ou D.append(D2[i][j])
     return diag
 
+
 def trace(D2) -> list:
     Nl = len(D2)
     Nc = len(D2[0])
@@ -46,6 +51,7 @@ def trace(D2) -> list:
     for i in range(Nl):
         trc += D2[i][i]
     return trc
+
 
 def sommeAB(A, B):
     nla = len(A)
@@ -61,6 +67,7 @@ def sommeAB(A, B):
         Sab += [ligne]
     return Sab
 
+
 def produitAB(A, B):
     nla = len(A)
     nca = len(A[0])
@@ -74,7 +81,9 @@ def produitAB(A, B):
             ligne += [A[i][j] * B[i][j]]
         Pab += [ligne]
     return Pab
-##
+
+
+# Ex.
 def produitM(A, B):
     nla = len(A)
     nca = len(A[0])
@@ -92,11 +101,11 @@ def produitM(A, B):
         Pab += [ligne]
     return Pab
 
-# Programme Principal
-#A = creation(N,M)
-A = [[0,0],[0,0]]
+## PROGRAMME PRINCIPAL
+# A = creation(N,M)
+A = [[0, 0], [0, 0]]
 saisie2D(A)
 affichage2D(A)
 print(diagonale(A))
-I = [[1,0,0],[0,1,0],[0,0,1]]
+I = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
 print(produitM(I, I))
