@@ -55,7 +55,6 @@ def somme(Notes) -> float:
     somme = 0                       # 1. Initialisation du résultat
     for indice in range(taille):
             somme += Notes[indice]  # 2. Construction du résultat
-            indice += 1
     return somme                    # 3. Renvoi du résultat final
 
 
@@ -91,8 +90,8 @@ def moyenne(Notes) -> float:
 ## RECHERCHE : Appartenance
 def appartient(x, tab) -> bool:
     '''Teste si x fait partie de tab.
-    Donnée
-    ------
+    Données
+    -------
         tab : list, tableau d'entiers
         x   : int, valeur à chercher
     Sorite
@@ -231,3 +230,19 @@ t = [1, 2, 2, 5, 2, 8]
 
 resultat = max(t)
 print('Le maximum est', resultat)
+
+##
+def SommeTab(A, B):
+    Na = len(A)
+    Nb = len(B)
+    assert Na == Nb, 'Données non valides'
+    somAB = []
+    for i in range(Na):
+        somAB += [A[i] + B[i]]
+    return somAB
+
+# Appel
+t = [1, 2, 2, 5, 2, 8]
+
+resultat = SommeTab(t, t)
+print('La Somme est', resultat)
