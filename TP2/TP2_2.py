@@ -43,7 +43,7 @@ def diagonale(D2) -> list:
     return diag
 
 
-def trace(D2) -> list:
+def trace(D2) -> float:
     Nl = len(D2)
     Nc = len(D2[0])
     assert Nl == Nc
@@ -53,7 +53,9 @@ def trace(D2) -> list:
     return trc
 
 
-def sommeAB(A, B):
+def sommeAB(A, B) -> list:
+    '''Somme de deux matrices terme à terme.
+    '''
     nla = len(A)
     nca = len(A[0])
     nlb = len(B)
@@ -69,6 +71,7 @@ def sommeAB(A, B):
 
 
 def produitAB(A, B):
+    '''Produit de deux matrices terme à terme.'''
     nla = len(A)
     nca = len(A[0])
     nlb = len(B)
@@ -85,6 +88,7 @@ def produitAB(A, B):
 
 # Ex.
 def produitM(A, B):
+    '''Produit matriciel de deux matrices.'''
     nla = len(A)
     nca = len(A[0])
     nlb = len(B)

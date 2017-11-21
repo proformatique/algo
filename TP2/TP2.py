@@ -37,7 +37,7 @@ def permutation(A, i, j):
     # A[i], A[j] = A[j], A[i]
 
 
-# Ex.2 Permutation circulaire
+## Ex.2 Permutation circulaire
 def permutationCirculaire(A, i_d, i_f):
     '''Permutation circulaire entre deux indices dans un tableau.
     Données
@@ -49,7 +49,7 @@ def permutationCirculaire(A, i_d, i_f):
     --------
         A : après permutation
     Exemple:
-    --------
+    -------- 0  1  2  3  4  5
     >>> A = [5, 2, 3, 4, 8, 9]
     >>> permutationCirculaire(A, 1, 4)
     >>> A
@@ -61,7 +61,7 @@ def permutationCirculaire(A, i_d, i_f):
         A[i] = A[i-1]
     A[i_d] = temp
 
-
+##
 # Ex.3 Permutation successive
 def permutationSuccessive(A, i_d, i_f):
     '''Permutation successive entre deux indices dans un tableau.
