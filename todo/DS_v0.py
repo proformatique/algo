@@ -76,7 +76,7 @@ Tempmax = [19.4, 20.3, 21.7, 22.9, 21.6, 21.4, 22.2, 18.9, 20.8, 18.4, 19.1, 21.
 Precip  = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.0, 0, 0, 3.0, 0, 0, 0,
            0, 0, 0, 1.0, 0, 0]
 #               0        1        2
-meteo = [Tempmin, Tempmax, Precip]    
+meteo = [Tempmin, Tempmax, Precip]
 premierjour = 7
 mesure = 0
 max = extremum(meteo, mesure, True)
