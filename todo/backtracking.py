@@ -1,4 +1,4 @@
-path = {
+﻿path = {
     'A' : ['A', 'E', 'B'],
     'B' : ['A', 'E', 'D', 'C'],
     'C' : ['B', 'E', 'D'],
@@ -124,4 +124,34 @@ def anagram(ls, p=[], i):
         p.append(c)
         anagram(ls, p, c)
         p.pop()
-                    
+
+def anagram(ch, c='', chosen=[]):
+    if len(chosen) >= len(ch):
+        print(c)
+    else:
+        for i in range(len(ch)):
+            if i not in chosen:
+                chosen.append(i)
+                anagram(ch , c+ch[i], chosen)
+                chosen.pop()
+
+def filebrowser(file, d=''):
+    for f in file:
+        if type(f) != list:
+            print(d,f)
+        else:
+            filebrowser(f, d+'\t')
+
+##
+def parties(liste, chosen=[], choice=''):
+    if len(liste) == 0:
+        print(chosen)
+    else:
+        for c in liste:
+            d = liste.pop()
+            chosen.append(c)
+            parties(liste, chosen)
+            chosen.pop()
+            parties(liste, chosen)
+            liste.append(d)
+            
