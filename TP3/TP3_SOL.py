@@ -1,7 +1,29 @@
+# Transcription de l'algorithme
+L = 5 # L = len(T)
+C = 5 # C = len(T[0])
+T = [[0] * C for i in range(L)]
+
+for i in range(L):
+    for j in range(C):
+        print('Entrer la valeur de T [', i, '][', j, ']')
+        T[i][j] = input()
+##
+for i in range(L):
+    for j in range(C):
+        print('La valeur de T [', i, '][', j, '] est ', T[i][j])
+
+##
+def affichediagonale(T2D):
+    L = len(T2D)
+    for i in range(L):
+        print('T [', i, '][', i, '] = ', T2D[i][i])
+
+
 def permuterColonnes(T2D, i, j):
     for k in range(len(T2D)):
         T2D[k][i], T2D[k][j] = T2D[k][j], T2D[k][i]
-    
+
+##
 def permuterLignes(T2D, i, j):
     for k in range(len(T2D[0])):
         T2D[i][k], T2D[j][k] = T2D[j][k], T2D[i][k]
@@ -44,8 +66,20 @@ def moyenneEleve(nom):
                 print(notes[ielv][j])
     if ielv == -1:
         prnt('Pas d\'élève avec le nom ' + nom)
-    
-# Q 1: Non, type, valeurs calculées...
+
+def moyenne2D(notes):
+    L = len(notes)
+    C = len(notes[0]) - 1
+    ttl = sum(coefficient) # somme()
+    for i in range(L):
+        somme = 0
+        for j in range(C):
+            somme += notes[i][j] * coefficient[j]
+        moy = somme / ttl
+        notes[i][C] = moy
+
+# Mini projet
+# Q 1: Non, Types différents (str, float), Valeurs calculées (moyenne), Mélange des données (Noms, DSs) et résultats (Moyenne), ...
 # Q 2 
 N = eval(input('Entrer le nombre d\'élèves '))
 C = 4
