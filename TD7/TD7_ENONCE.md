@@ -9,7 +9,8 @@ Les algorithmes de tri permettent d'ordonner les éléments d'un tableau.
 Dans le cahier d'exercices, écrire les codes des fonctions suivantes :
 #### Ex. 1
 ##### Question 1. Définissez la fonction
-```minimumSuivant(T, i) -> int
+```
+   minimumSuivant(T, i) -> int
 ```
 ```python
 
