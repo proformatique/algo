@@ -23,7 +23,8 @@ Sur un tableau de n éléments (numérotés de 0 à n-1), le principe du tri par
 ```python
 
     def minimumSuivant(T, i) -> int:
-        ''' Retourne l'indice du minimum d'un tableau à partir d'une position i choisie.
+        ''' Retourne l'indice du minimum d'un tableau
+            à partir d'une position i choisie.
         Données:
         --------
             T : list, Tableau à une dimension
