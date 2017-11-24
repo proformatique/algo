@@ -10,11 +10,7 @@ def minimumSuivant(T, i) -> int:
         i : int, position choisie
     Sorties:
     --------
-<<<<<<< HEAD
         minrel : int, indice du minimum relatif à partir de i.
-=======
-        minrel : int, minimum relatif à partir de i.
->>>>>>> a5baee3da55727601cf30d27def69fad1c267e30
     Exemples:
     ---------
     >>> tab = [4, 0, 5, 9, 3, 7, 8]
@@ -23,7 +19,6 @@ def minimumSuivant(T, i) -> int:
     >>> minimumSuivant(tab, 2)
     4
     '''
-<<<<<<< HEAD
     minrel = i
     mn = T[minrel]
     for j in range(i + 1, len(T)):
@@ -31,9 +26,7 @@ def minimumSuivant(T, i) -> int:
             minrel = j
             mn = T[minrel]
     return minrel
-=======
 # Todo Ecrire le code
->>>>>>> a5baee3da55727601cf30d27def69fad1c267e30
 
 
 def selection(T):
