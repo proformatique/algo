@@ -20,7 +20,7 @@ def minimumSuivant(T, i) -> int:
         i : int, position choisie
     Sorties:
     --------
-        minrel : int, indice du minimum relatif à partir de i.
+        minrel : int, indice du minimum relatif Ã  partir de i.
     Exemples:
     ---------
     >>> tab = [4, 0, 5, 9, 3, 7, 8]
