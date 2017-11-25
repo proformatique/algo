@@ -45,7 +45,8 @@ Sur un tableau de n éléments (numérotés de 0 à n-1), le principe du tri par
 ```python
 
     def premuter(T, i, j):
-        ''' Permute l'élément d'indice i avec celui d'indice j dans un tableau T.
+        ''' Permute l'élément d'indice i et celui
+        d'indice j dans un tableau T.
         Données:
         --------
             T : list, Tableau à une dimension
@@ -66,7 +67,8 @@ Sur un tableau de n éléments (numérotés de 0 à n-1), le principe du tri par
 ```python
 
     def selection(T):
-        ''' Permute l'élément d'indice i et le minimum du tableau T à partir de i.
+        ''' Permute l'élément d'indice i et le minimum
+        du tableau T à partir de i.
         Données:
         --------
             T : list, Tableau à une dimension
@@ -190,7 +192,8 @@ L'objectif d'une étape est d'insérer le i-ème élément à sa place parmi ceu
 ```python
 
     def permutationsuccessive2(T):
-        '''Permutation successive conditionnée : permute uniquement les éléments successifs T[i] et T[i-1] si T[i]<T[i-1]
+        '''Permutation successive conditionnée : permute uniquement
+        les éléments successifs T[i] et T[i-1] si T[i]<T[i-1]
         Données:
         --------
             T : list, Tableau à une dimension
@@ -209,7 +212,8 @@ L'objectif d'une étape est d'insérer le i-ème élément à sa place parmi ceu
 ```python
 
     def triabulle(T):
-        '''Répète la permutation successive jusqu'à ce que le tableau soit trié.
+        '''Répète la permutation successive jusqu'à ce que le
+        tableau soit trié.
         Données:
         --------
             T : list, Tableau à une dimension
