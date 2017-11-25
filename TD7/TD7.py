@@ -1,4 +1,4 @@
-"""TD7 les tris.
+﻿"""TD7 les tris.
 Tableaux à une dimension"""
 
 
@@ -8,7 +8,7 @@ __version__ = '0.1'
 import TP2.TP2 as tp2
 # import du fichier TP2 du Dossier TP2 sous le nom tp2
 # Il faut cocher la case "Add path to python path"
-# Pyzo>>tolls>>filebrowser>>star>>Add path to python path
+# Pyzo>>tools>>filebrowser>>star>>Add path to python path
 
 
 def minimumSuivant(T, i) -> int:
