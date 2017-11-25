@@ -115,7 +115,7 @@ Dans le cahier d'exercices, écrire les codes des fonctions suivantes :
         '''
 ```
 
-##### Question 2. Définir la fonction cpermuter()
+##### Question 3. Définir la fonction cpermuter()
 
 ```python
 
@@ -124,7 +124,32 @@ Dans le cahier d'exercices, écrire les codes des fonctions suivantes :
         Données:
         --------
             T : list, Tableau à une dimension
-            i : int, indice de l'élément mal placé.
+            i : int, indice de la bonnne place.
+            j : int, indice de l'élément mal placé.
+        Sorties:
+        --------
+            T : après permutation
+        Exemples:
+        ---------
+        >>> tab = [4, 5, 0, 9, 3, 7, 8]
+        >>> cpermuter(tab, 0, 2)
+        >>> tab
+        [0, 4, 5, 9, 3, 7, 8]
+        '''
+```
+
+#### Ex. 3
+##### Question 1. Définir la fonction permutationsuccessive()
+
+```python
+
+    def permutationsuccessive(T, i, j) -> int:
+        '''Permutation permutationsuccessive entre i et j.
+        Données:
+        --------
+            T : list, Tableau à une dimension
+            i : int, indice de début.
+            j : int, indice de fin.
         Sorties:
         --------
             T : après permutation
