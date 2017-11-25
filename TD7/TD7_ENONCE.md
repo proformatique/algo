@@ -11,6 +11,7 @@ Les algorithmes de tri permettent d'ordonner les éléments d'un tableau.
 - Exécuter les codes et corriger les erreurs de syntaxiques et sémantiques.
 
 #### Ex. 1 Tri par sélection
+<<<<<<< HEAD
 Le tri par sélection (ou tri par extraction) est un algorithme de tri par comparaison.
 
 Sur un tableau de n éléments (numérotés de 0 à n-1), le principe du tri par sélection est le suivant :
@@ -19,6 +20,8 @@ Sur un tableau de n éléments (numérotés de 0 à n-1), le principe du tri par
 1. rechercher le second plus petit élément du tableau, et l'échanger avec l'élément d'indice 1 ;
 1. continuer de cette façon jusqu'à ce que le tableau soit entièrement trié.
 
+=======
+>>>>>>> d2817b6ea3dc6d3f9363ec3f5728792796c3b59a
 ##### Question 1. Définir la fonction minimumSuivant()
 ```python
 
@@ -82,6 +85,7 @@ Sur un tableau de n éléments (numérotés de 0 à n-1), le principe du tri par
         '''
 ```
 ##### Question 4. transcrire en python le pseudo-code suivant
+<<<<<<< HEAD
 En pseudo-code, l'algorithme s'écrit ainsi :
 ```
     procédure tri_selection(tableau t, entier n)
@@ -102,6 +106,32 @@ Dans l'algorithme, on parcourt le tableau à trier du début à la fin. Au momen
 
 L'objectif d'une étape est d'insérer le i-ème élément à sa place parmi ceux qui précèdent. Il faut pour cela trouver où l'élément doit être inséré en le comparant aux autres, puis décaler les éléments afin de pouvoir effectuer l'insertion. En pratique, ces deux actions sont fréquemment effectuées en une passe, qui consiste à faire « remonter » l'élément au fur et à mesure jusqu'à rencontrer un élément plus petit.
 
+=======
+Le tri par sélection (ou tri par extraction) est un algorithme de tri par comparaison.
+
+Sur un tableau de n éléments (numérotés de 0 à n-1), le principe du tri par sélection est le suivant :
+
+1. rechercher le plus petit élément du tableau, et l'échanger avec l'élément d'indice 0 ;
+1. rechercher le second plus petit élément du tableau, et l'échanger avec l'élément d'indice 1 ;
+1. continuer de cette façon jusqu'à ce que le tableau soit entièrement trié.
+
+En pseudo-code, l'algorithme s'écrit ainsi :
+```
+    procédure tri_selection(tableau t, entier n)
+         pour i de 1 à n - 1
+            min ← i
+            pour j de i + 1 à n
+                si t[j] < t[min], alors min ← j
+            fin pour
+            si min ≠ i, alors
+                échanger(t[i], t[min])
+            fin si
+        fin pour
+    fin procédure
+```
+
+#### Ex. 2 Tri par insertion
+>>>>>>> d2817b6ea3dc6d3f9363ec3f5728792796c3b59a
 ##### Question 1. Définir la fonction malplace()
 
 ```python
@@ -202,6 +232,7 @@ L'objectif d'une étape est d'insérer le i-ème élément à sa place parmi ceu
         >>> permutationsuccessive2(tab)
         >>> tab
         [4, 0, 5, 3, 7, 8, 9]
+<<<<<<< HEAD
         '''
 ```
 ##### Question 2. Définir la fonction triabulle()
@@ -223,6 +254,29 @@ L'objectif d'une étape est d'insérer le i-ème élément à sa place parmi ceu
         [0, 3, 4, 5, 7, 8, 9]
         '''
 ```
+=======
+        '''
+```
+##### Question 2. Définir la fonction triabulle()
+```python
+
+    def triabulle(T):
+        '''Répète la permutation successive jusqu'à ce que le tableau soit trié.
+        Données:
+        --------
+            T : list, Tableau à une dimension
+        Sorties:
+        --------
+            T : après permutation
+        Exemples:
+        ---------
+        >>> tab = [4, 5, 0, 9, 3, 7, 8]
+        >>> triabulle(tab)
+        >>> tab
+        [0, 3, 4, 5, 7, 8, 9]
+        '''
+```
+>>>>>>> d2817b6ea3dc6d3f9363ec3f5728792796c3b59a
 ##### Question 3. transcrire en python le pseudo-code suivant
 Le tri à bulles ou tri par propagation est un algorithme de tri. Il consiste à comparer répétitivement les éléments consécutifs d'un tableau, et à les permuter lorsqu'ils sont mal triés. Il doit son nom au fait qu'il déplace rapidement les plus grands éléments en fin de tableau, comme des bulles d'air qui remonteraient rapidement à la surface d'un liquide.
  ```
