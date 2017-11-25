@@ -23,8 +23,7 @@ Sur un tableau de n éléments (numérotés de 0 à n-1), le principe du tri par
 ```python
 
     def minimumSuivant(T, i) -> int:
-        ''' Retourne l'indice du minimum d'un tableau
-            à partir d'une position i choisie.
+        ''' Retourne l'indice du minimum d'un tableau à partir d'une position i choisie.
         Données:
         --------
             T : list, Tableau à une dimension
@@ -85,7 +84,6 @@ Sur un tableau de n éléments (numérotés de 0 à n-1), le principe du tri par
         '''
 ```
 ##### Question 4. transcrire en python le pseudo-code suivant
-
 En pseudo-code, l'algorithme s'écrit ainsi :
 ```
     procédure tri_selection(tableau t, entier n)
@@ -213,8 +211,7 @@ L'objectif d'une étape est d'insérer le i-ème élément à sa place parmi ceu
 ```python
 
     def triabulle(T):
-        '''Répète la permutation successive jusqu'à ce que le
-        tableau soit trié.
+        '''Répète la permutation successive jusqu'à ce que le tableau soit trié.
         Données:
         --------
             T : list, Tableau à une dimension
