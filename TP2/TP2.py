@@ -188,31 +188,32 @@ def fusion2(A, B):
 
 
 ## PROGRAMME PRINCIPAL : TEST DES PROCEDURES
-# Ex.1 Permuter deux valeurs
-A = [5, 2, 3, 4, 8, 9]
-print("Avant la permutaion", A)
-permutation(A, 3, 5)
-print("Après permutation(A, 3, 5)", A)
-# Ex.2 Permutation circulaire
-A = [5, 2, 3, 4, 8, 9]
-print("Avant la permutaion", A)
-permutationCirculaire(A, 2, 4)
-print("Après permutationCirculaire(A, 2, 4)", A)
-# Ex.3 Permutation successive
-A = [5, 2, 3, 4, 8, 9]
-print("Avant la permutaion", A)
-permutationSuccessive(A, 2, 4)
-print("Après permutationSuccessive(A, 2, 4)", A)
-# Ex.4 Permutation symétrique
-A = [5, 2, 3, 4, 8, 9]
-print("Avant la permutaion", A)
-inverser(A)
-print("Après inverser(A, 2, 4)", A)
-# Ex.5 Fusion de deux tableaux triés
-A = [2, 4, 7, 9, 11, 12]
-B = [1, 3, 5, 6, 8, 10]
-print("Avant la fusion :", A, B, sep='\n')
-C = fusion1(A, B)
-print("Après fusion1(A, B)", C)
-C = fusion2(A, B)
-print("Après fusion1(A, B)", C)
+if __name__ == '__main__':
+    # Ex.1 Permuter deux valeurs
+    A = [5, 2, 3, 4, 8, 9]
+    print("Avant la permutaion", A)
+    permutation(A, 3, 5)
+    print("Après permutation(A, 3, 5)", A)
+    # Ex.2 Permutation circulaire
+    A = [5, 2, 3, 4, 8, 9]
+    print("Avant la permutaion", A)
+    permutationCirculaire(A, 2, 4)
+    print("Après permutationCirculaire(A, 2, 4)", A)
+    # Ex.3 Permutation successive
+    A = [5, 2, 3, 4, 8, 9]
+    print("Avant la permutaion", A)
+    permutationSuccessive(A, 2, 4)
+    print("Après permutationSuccessive(A, 2, 4)", A)
+    # Ex.4 Permutation symétrique
+    A = [5, 2, 3, 4, 8, 9]
+    print("Avant la permutaion", A)
+    inverser(A)
+    print("Après inverser(A, 2, 4)", A)
+    # Ex.5 Fusion de deux tableaux triés
+    A = [2, 4, 7, 9, 11, 12]
+    B = [1, 3, 5, 6, 8, 10]
+    print("Avant la fusion :", A, B, sep='\n')
+    C = fusion1(A, B)
+    print("Après fusion1(A, B)", C)
+    C = fusion2(A, B)
+    print("Après fusion1(A, B)", C)

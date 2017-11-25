@@ -106,10 +106,11 @@ def produitM(A, B):
     return Pab
 
 ## PROGRAMME PRINCIPAL
+if __name__ == '__main__':
 # A = creation(N,M)
-A = [[0, 0], [0, 0]]
-saisie2D(A)
-affichage2D(A)
-print(diagonale(A))
-I = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
-print(produitM(I, I))
+    A = [[0, 0], [0, 0]]
+    saisie2D(A)
+    affichage2D(A)
+    print(diagonale(A))
+    I = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+    print(produitM(I, I))
