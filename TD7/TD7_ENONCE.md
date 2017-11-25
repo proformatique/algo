@@ -212,7 +212,8 @@ L'objectif d'une étape est d'insérer le i-ème élément à sa place parmi ceu
 ```python
 
     def triabulle(T):
-        '''Répète la permutation successive jusqu'à ce que le tableau soit trié.
+        '''Répète la permutation successive jusqu'à ce que le
+        tableau soit trié.
         Données:
         --------
             T : list, Tableau à une dimension
