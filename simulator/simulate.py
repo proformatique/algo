@@ -1,4 +1,25 @@
-
+"""
+<head>
+<link rel="stylesheet" href="sim.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="simhide.css" type="text/css" media="print" />
+</head>
+TAF 1 :
+Sans utiliser la machine:
+<ol>
+<li>Exécutez manuellement les instructions du script</li>
+<li>Remplissez le tableau de simulation (à chaque break Point)</li>
+<li>Notez vos remarques et commentaires</li>
+<li>Dites ce que fait le script</li>
+</ol>
+TAF 2 :
+En utilisant la machine:
+<ol>
+<li>Exécutez le script, après avoir remplacé # BPoint par l'instruction print()</li>
+<li>Comparez votre tableau de simulation avec le résultat de l'éxecution</li>
+<li>Notez vos remarques et commentaires</li>
+<li>Transformez le script en sous-programme def identifiant(params)</li>
+</ol>
+"""
 class varlist:
     seps = '##s:'
     sepi = '#i:'
@@ -18,9 +39,10 @@ class varlist:
         self.show = s
         self.data = []
         self.line = self.getNames().replace(',', ' = </th><th>')
-        self.line = '<table border=1 width=100% style="border-collapse: collapse;border: solid 1px gray"><tr><th>' + self.line  +' = </th></tr>'
+        self.line = '<table border=1 style="border-collapse: collapse;border: solid 1px gray"><tr><th>' + self.line  +' = </th></tr>'
         dv = eval(self.getNames())
-        self.line = self.line.format(*dv)
+        #todo self.line = self.line.format(*dv)
+        #self.line %= tuple(dv)
         varlist.count += 1
     
     def setCode(self, code):
@@ -29,10 +51,11 @@ class varlist:
     def getGui(self):
         for dv in self.data:
             space = ('.',) * len(dv)
-            ln = '<td><span class="hide">{!s}</span></td>' * len(dv)
+            ln = '<td><span class="hide">%s</span></td>' * len(dv)
             ln = "<tr>"+ ln + "</tr>"
             val = dv if self.show  else space
-            ln = ln.format(*val)
+            #todo ln = ln.format(*val)
+            ln %= val
             self.line += ln 
         self.line += '</table>'
         return self.line 
@@ -49,17 +72,17 @@ class varlist:
     
     def save(self, mode, file ="fiche.html"):
         mode = "w" if mode else "a"
-        t = "<hr/><table width=100%><tr><th width=20%><h3>Listing "+str(varlist.count)+":</h3></th><th width=20%><h3>simulation d\'exécution "+str(varlist.count)+":</h3></th><th width=40%><h3>Commentaires</h3></th></tr><tr><td><pre>{}</pre></td><td>{}</td><td><hr/><br><hr/><br><hr/><br><hr/><br><hr/><br><hr/><br><hr/><br></td></tr></table>"
-        t = t.format(self.code, self.getGui())
+        t = "<hr/><table ><tr><th class=code><h3>Listing "+str(varlist.count)+":</h3></th><th class=sim ><h3>simulation d\'exécution "+str(varlist.count)+":</h3></th><th class=com ><h3>Commentaires</h3></th></tr><tr><td><pre>%s</pre></td><td>%s</td><td><hr/><br><hr/><br><hr/><br><hr/><br><hr/><br><hr/><br><hr/><br></td></tr></table>"
+        t %= (self.code, self.getGui()) #todo t.format(self.code, self.getGui())
         file = varlist.webdist + file
         with open(file, mode, encoding='utf-8') as f:
             f.write(t)
     
     def saveDemo(self, mode, file='demo_all.py'):
         mode = "w" if mode else "a"
-        t = "\n# <demo> stop\n # Script \n{}"
+        t = "\n# <demo> stop\n # Script \n %s" #todo  {}
         cd = self.code.replace("# APPEL", '\n# <demo> stop\n# APPEL')
-        t = t.format(cd)
+        t %= cd #todo t.format(cd)
         file = varlist.demodist + file 
         with open(file, mode, encoding='utf-8') as f:
             f.write(t)
@@ -112,15 +135,15 @@ if demos:
                 exec(open(varlist.src + path).read())
                 code = cs.read().split(varlist.seps)
                 spy = [None] * len(code)
-                for vi in range(len(code)):
+                for vi in range(len(spy)):
                     var = code[vi].split()
                     var = var[0].replace(varlist.sepv, '')
                     cd  = purify(code[vi], var)
-                    spy[vi] = varlist(eval(var))
+                    spy[vi] = varlist(eval(var)) # Todo creation 
                     d = code[vi]
-                    d = d.replace(varlist.sepl2, '; spy[{0}].withinloop()')
-                    d = d.replace(varlist.sepl, 'spy[{0}].withinloop()')
-                    d = d.format(vi)
+                    d = d.replace(varlist.sepl2, '; spy[%(s)s].withinloop()')
+                    d = d.replace(varlist.sepl, 'spy[%(s)s].withinloop()')
+                    d %= {'s':vi} # d.format(vi)
                     exec(d)
                     spy[vi].setCode(cd)
                     spy[vi].save(False, file=path[:-3] + ".html")
