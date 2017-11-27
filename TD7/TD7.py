@@ -120,9 +120,9 @@ def bonnePlace(T, i) -> int:
     0
     '''
     bnplace = i
-    for j in range(i - 1, -1, -1):
-        if T[i] < T[j]:
-            bnplace = j
+    for j in range(i, 0, -1):
+        if T[i] < T[j - 1]:
+            bnplace = j - 1
     return bnplace
 
 
@@ -142,7 +142,24 @@ def cpermuter(T):
 # La combinaison des fonctions ne permet pas d'éviter la répétition des
 # parcours, on doit combinier les codes des fonctions directement.
 
+
+
 def tri_2d_selection(M, c):
+    '''Permet de trier un tableau à deux dimensions M selon une colonne c.
+    Données
+    -------
+        M : list, tableau à deux dimensions
+        c : int, indice de la colonne
+    Sorties
+    -------
+        M, après le tri par sélection
+    Exemples
+    --------
+    >>> T = [[10, 20, 30], [11, 21, 31], [1, 31, 31]]
+    >>> tri_2d_selection(T, 0)
+    >>> T
+    [[1, 31, 31], [10, 20, 30], [11, 21, 31]]
+    '''
     fin = len(M)
     for i in range(fin-1):
         im = i
@@ -171,4 +188,4 @@ if __name__ == '__main__':
     T = [4, 8, 2, 9, 5, 7, 0]
     print('Avant ', T)
     cpermuter(T)
-    print('Aprés le tri par insertion ', T)  # doit afficher [0, 2, 4, 5, 7, 8, 9]
+    print('Après le tri par insertion ', T)  # doit afficher [0, 2, 4, 5, 7, 8, 9]
