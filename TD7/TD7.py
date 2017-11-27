@@ -9,15 +9,17 @@ Objectifs
         - Faire appel aux fonctions (permutaion, permutaioncirculaire...)
         - Adapter le code d'une fonction (minimumsuivant)
 """
-#Todo : Ecrire une fonction qui permet de trier un tableau à deux dimensions M 
+#Todo : Ecrire une procédure qui permet de trier un tableau 
+#todo à deux dimensions M 
 #Todo   1) selon une colonne c tri_2d_selection(M, c) 
-#Todo   2) selon une ligne r tri_2d_selection(M, r) 
+#Todo   2) selon une ligne r tri_2d_selection2(M, r) 
 
 __author__ = 'A. MHAMEDI'
 __version__ = '0.1'
 
 import TP2.TP2 as tp2
-# import du fichier TP2 du Dossier TP2 sous le nom tp2
+import TP3.TP3_SOL as tp3
+# import du fichier TP2.py du Dossier TP2 sous le nom tp2
 # Sous Pyzo, Il faut cocher la case "Add path to python path"
 # Pyzo>>tools>>filebrowser>>star>>Add path to python path
 
@@ -77,7 +79,7 @@ def selection(T):
 # Question 1.
 def malplace(T, i) -> int:
     '''Retourne l'indice de l'élément qui est plus petit
-    que son pràcàdent dans le tableau T à partir de i.
+    que son précédent dans le tableau T à partir de i.
     Donnàes:
     --------
         T : list, Tableau à une dimension
@@ -140,6 +142,20 @@ def cpermuter(T):
 # La combinaison des fonctions ne permet pas d'éviter la répétition des
 # parcours, on doit combinier les codes des fonctions directement.
 
+def tri_2d_selection(M, c):
+    fin = len(M)
+    for i in range(fin-1):
+        im = i
+        mn = M[i][c]
+        for j in range(i + 1, fin):
+            if M[j][c] < mn:
+                im = j
+                mn = M[j][c]
+        tp3.permuterLignes(M, i, im)
+        
+            
+        
+     
 # PROGRAMME PRINCIPAL
 if __name__ == '__main__':
     # Test automatique

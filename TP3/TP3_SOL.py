@@ -1,16 +1,4 @@
 # Transcription de l'algorithme
-L = 5 # L = len(T)
-C = 5 # C = len(T[0])
-T = [[0] * C for i in range(L)]
-
-for i in range(L):
-    for j in range(C):
-        print('Entrer la valeur de T [', i, '][', j, ']')
-        T[i][j] = input()
-##
-for i in range(L):
-    for j in range(C):
-        print('La valeur de T [', i, '][', j, '] est ', T[i][j])
 
 ##
 def affichediagonale(T2D):
@@ -42,7 +30,7 @@ def creation(L, C):
 def saisieNotes():
     for i in range(len(notes)):
         noms[i] = input('Entrer le nom de l\'élève :')
-        for j in range(len(notes[0]-1):
+        for j in range(len(notes[0]-1)):
             notes[i][j] = eval(input('Entrer la note '+str(i+1)+' : '))
             
 
@@ -80,10 +68,24 @@ def moyenne2D(notes):
 
 # Mini projet
 # Q 1: Non, Types différents (str, float), Valeurs calculées (moyenne), Mélange des données (Noms, DSs) et résultats (Moyenne), ...
-# Q 2 
-N = eval(input('Entrer le nombre d\'élèves '))
-C = 4
-notes = creation(N, 4)
-noms = [''] * N
+# Q 2
+if __name__ == '__main__':
+    L = 5 # L = len(T)
+    C = 5 # C = len(T[0])
+    T = [[0] * C for i in range(L)]
+    
+    for i in range(L):
+        for j in range(C):
+            print('Entrer la valeur de T [', i, '][', j, ']')
+            T[i][j] = input()
+    ##
+    for i in range(L):
+        for j in range(C):
+            print('La valeur de T [', i, '][', j, '] est ', T[i][j])
+
+    N = eval(input('Entrer le nombre d\'élèves '))
+    C = 4
+    notes = creation(N, 4)
+    noms = [''] * N
         
     
