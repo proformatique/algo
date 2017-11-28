@@ -1,4 +1,5 @@
 """TD7 les tris.
+
 Tableaux à une dimension
 Objectifs
     Présentation et implémentation des tris de base
@@ -7,12 +8,12 @@ Objectifs
         - tri à bulles
     Réutilisation des codes
         - Faire appel aux fonctions (permutaion, permutaioncirculaire...)
-        - Adapter le code d'une fonction (minimumsuivant)
+        - Adapter le code d'une fonction (minimumsuivant...)
 """
-#Todo : Ecrire une procédure qui permet de trier un tableau 
-#todo à deux dimensions M 
-#Todo   1) selon une colonne c tri_2d_selection(M, c) 
-#Todo   2) selon une ligne r tri_2d_selection2(M, r) 
+# Todo : Ecrire une procédure qui permet de trier un tableau
+# todo à deux dimensions M
+# Todo   1) selon une colonne c tri_2d_selection(M, c)
+# Todo   2) selon une ligne r tri_2d_selection2(M, r)
 
 __author__ = 'A. MHAMEDI'
 __version__ = '0.1'
@@ -25,8 +26,9 @@ import TP3.TP3_SOL as tp3
 
 
 def minimumSuivant(T, i) -> int:
-    ''' Retourne l'indice du minimum d'un tableau
-        à partir d'une position i choisie.
+    """Minimum d'un tableau.
+
+    Retourne l'indice du minimum relatif à partir d'une position i choisie.
     Données:
     --------
         T : list, Tableau à une dimension
@@ -41,7 +43,7 @@ def minimumSuivant(T, i) -> int:
     1
     >>> minimumSuivant(tab, 2)
     4
-    '''
+    """
     minrel = i
     mn = T[minrel]
     for j in range(i + 1, len(T)):
@@ -52,8 +54,10 @@ def minimumSuivant(T, i) -> int:
 
 
 def selection(T):
-    '''Parcourt T en permutant l'élément en cours T[i]
-        et le minimum de T à partir de la position i.
+    """Ordonner T en utilidant le tri par selection.
+
+    Parcourt T en permutant l'élément en cours T[i] et le minimum de T
+    à partir de la position i.
     Permet de combiner permutation() et minimumSuivant()
     Données:
     --------
@@ -67,7 +71,7 @@ def selection(T):
     >>> selection(tab)
     >>> tab
     [0, 3, 4, 5, 7, 8, 9]
-    '''
+    """
     for i in range(len(T)):
         j = minimumSuivant(T, i)
         if i != j:  # else: pas besoin de permuter
@@ -76,20 +80,22 @@ def selection(T):
 
 
 def selection2(T):
+    """implémentation du tri par sélection."""
     for i in range(len(T) - 1):
-        im = i 
-        #vm = T[im] 
+        im = i
         for j in range(i + 1, len(T)):
-            if T[j] < T[im]: #vm:
-                im = j # ; vm = T[im]
+            if T[j] < T[im]:
+                im = j
         if im != i:
             tp2.permutation(T, i, im)
+
 
 # Ex.1
 # Question 1.
 def malplace(T, i) -> int:
-    '''Retourne l'indice de l'élément qui est plus petit
-    que son précédent dans le tableau T à partir de i.
+    """Retourne l'indice de l'élément mal placé.
+
+    Qui est plus petit que son précédent dans le tableau T à partir de i.
     Donnàes:
     --------
         T : list, Tableau à une dimension
@@ -102,7 +108,7 @@ def malplace(T, i) -> int:
     >>> tab = [4, 0, 5, 9, 3, 7, 8]
     >>> malplace(tab, 1)
     1
-    '''
+    """
     assert i > 0, 'Le premier (ou l\'unique) est toujours bien placé'
     imp = i
     for j in range(i, len(T)):
@@ -114,8 +120,9 @@ def malplace(T, i) -> int:
 
 # Question 2.
 def bonnePlace(T, i) -> int:
-    '''Retourne l'indice de la bonne place pour l'élément
-    référencé par la fonction malplace().
+    """Retourne l'indice de la bonne place.
+
+    Position de l'élément référencé par la fonction malplace().
     Donnàes:
     --------
         T : list, Tableau à une dimension
@@ -128,7 +135,7 @@ def bonnePlace(T, i) -> int:
     >>> tab = [4, 0, 5, 9, 3, 7, 8]
     >>> bonnePlace(tab, 1)
     0
-    '''
+    """
     bnplace = i
     for j in range(i, 0, -1):
         if T[j - 1] > T[i]:
@@ -141,6 +148,7 @@ def bonnePlace(T, i) -> int:
 # la permutation nous allons l'utiliser donc, et consacrer cpermuter
 # à faire toutes les permutations nécessaires pour trier le tableau
 def cpermuter(T):
+    """Trier T par insertion."""
     for i in range(1, len(T)):    # Parcours 1 de 1 à a
         a = malplace(T, i)        # Parcours 2 de 1 à a
         b = bonnePlace(T, a)      # Parcours 3 de a à b
@@ -149,12 +157,24 @@ def cpermuter(T):
         else:
             break
 
+
 # La combinaison des fonctions ne permet pas d'éviter la répétition des
 # parcours, on doit combinier les codes des fonctions directement.
+def tri_insertion(T):
+    """Implémentation du tri par insertion."""
+    for i in range(1, len(T)):
+        j = i
+        temp = T[j]
+        while j > 0 and temp < T[j - 1]:
+            T[j] = T[j - 1]
+            j -= 1
+        T[j] = temp
+
 
 def tri_2d_selection(M, c):
+    """Trier un tableau à 2 D."""
     fin = len(M)
-    for i in range(fin-1):
+    for i in range(fin - 1):
         im = i
         mn = M[i][c]
         for j in range(i + 1, fin):
@@ -162,28 +182,26 @@ def tri_2d_selection(M, c):
                 im = j
                 mn = M[j][c]
         tp3.permuterLignes(M, i, im)
-        
-            
-        
-     
+
+
 # PROGRAMME PRINCIPAL
 if __name__ == '__main__':
     # Test automatique
     import doctest as dt
     dt.testmod(verbose=False)
-    
+
     # Test manuel
     T = [4, 8, 2, 9, 5, 7, 0]
     print('Avant ', T)
     selection(T)
-    print('Après le tri par sélection ', T)  # doit afficher [0, 2, 4, 5, 7, 8, 9]
-
+    print('Après le tri par sélection ', T)
+    # doit afficher [0, 2, 4, 5, 7, 8, 9]
     T = [4, 8, 2, 9, 5, 7, 0]
     print('Avant ', T)
     selection2(T)
-    print('Après le tri par sélection2 ', T)  # doit afficher [0, 2, 4, 5, 7, 8, 9]
+    print('Après le tri par sélection2 ', T)
 
     T = [4, 8, 2, 9, 5, 7, 0]
     print('Avant ', T)
     cpermuter(T)
-    print('Aprés le tri par insertion ', T)  # doit afficher [0, 2, 4, 5, 7, 8, 9]
+    print('Aprés le tri par insertion ', T)

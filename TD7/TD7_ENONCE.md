@@ -36,9 +36,9 @@ Sur un tableau de n éléments (numérotés de 0 à n-1), le principe du tri par
         ---------
         >>> tab = [4, 0, 5, 9, 3, 7, 8]
         >>> minimumSuivant(tab, 0)
-        0
+        1
         >>> minimumSuivant(tab, 2)
-        3
+        4
         '''
 ```
 
