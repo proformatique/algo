@@ -75,6 +75,16 @@ def selection(T):
             # on utilise la permutation déjà créée(TP2)
 
 
+def selection2(T):
+    for i in range(len(T) - 1):
+        im = i 
+        #vm = T[im] 
+        for j in range(i + 1, len(T)):
+            if T[j] < T[im]: #vm:
+                im = j # ; vm = T[im]
+        if im != i:
+            tp2.permutation(T, i, im)
+
 # Ex.1
 # Question 1.
 def malplace(T, i) -> int:
@@ -121,8 +131,8 @@ def bonnePlace(T, i) -> int:
     '''
     bnplace = i
     for j in range(i, 0, -1):
-        if T[i] < T[j - 1]:
-            bnplace = j - 1
+        if T[j - 1] > T[i]:
+            bnplace = j
     return bnplace
 
 
@@ -142,24 +152,7 @@ def cpermuter(T):
 # La combinaison des fonctions ne permet pas d'éviter la répétition des
 # parcours, on doit combinier les codes des fonctions directement.
 
-
-
 def tri_2d_selection(M, c):
-    '''Permet de trier un tableau à deux dimensions M selon une colonne c.
-    Données
-    -------
-        M : list, tableau à deux dimensions
-        c : int, indice de la colonne
-    Sorties
-    -------
-        M, après le tri par sélection
-    Exemples
-    --------
-    >>> T = [[10, 20, 30], [11, 21, 31], [1, 31, 31]]
-    >>> tri_2d_selection(T, 0)
-    >>> T
-    [[1, 31, 31], [10, 20, 30], [11, 21, 31]]
-    '''
     fin = len(M)
     for i in range(fin-1):
         im = i
@@ -187,5 +180,10 @@ if __name__ == '__main__':
 
     T = [4, 8, 2, 9, 5, 7, 0]
     print('Avant ', T)
+    selection2(T)
+    print('Après le tri par sélection2 ', T)  # doit afficher [0, 2, 4, 5, 7, 8, 9]
+
+    T = [4, 8, 2, 9, 5, 7, 0]
+    print('Avant ', T)
     cpermuter(T)
-    print('Après le tri par insertion ', T)  # doit afficher [0, 2, 4, 5, 7, 8, 9]
+    print('Aprés le tri par insertion ', T)  # doit afficher [0, 2, 4, 5, 7, 8, 9]
