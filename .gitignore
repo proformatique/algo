@@ -103,3 +103,6 @@ ENV/
 *.bat
 *.html
 *.orig
+conf.py
+spx*/
+index.md
