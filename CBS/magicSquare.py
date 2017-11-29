@@ -13,9 +13,9 @@ def sommeRangee(cm, r) -> int:
     for i in range(len(cm)):
         sommeRg += cm[r][i]
     return sommeRg
-    
-    
-#Question 2.    
+
+
+#Question 2.
 def sommeColonne(cm, c) -> int:
     '''Retourne la somme de la colonne c du carré magique cm.
     Donnée
@@ -68,8 +68,8 @@ def magique(cm) -> bool:
         if not magique:
             break
     return magique
-    
-#Question 4.b        
+
+#Question 4.b
 def magiqueNormal(cm) -> bool:
     '''Retourne True si cm est normal.
     Donnée
@@ -79,7 +79,7 @@ def magiqueNormal(cm) -> bool:
     ------
         normal : bool, True si cm est normal, sinon False.
     '''
-    
+
     if not magique(cm):
         normal = False
     else:
@@ -98,10 +98,10 @@ def magiqueNormal(cm) -> bool:
         if not normal:
             break
     return normal
-        
-#Question 5.   
+
+#Question 5.
 def sommeMagic(cm1, cm2, signe) -> list:
-    '''Retourne un carrée magique somme de cm1 et cm2.
+    '''Retourne un carré magique somme de cm1 et cm2.
     Données
     ------
         cm1 : list, carré magique.
@@ -141,8 +141,8 @@ def reduireCMagique(cm) -> list:
             ligne += [cm[i][j] - 1]
         cm_1 += [ligne]
     return cm_1
-    
-    
+
+
 #Question 7.
 def divisionMagique(i, j, M) -> tuple:
     '''Retourne un tuple r, c.
@@ -159,7 +159,7 @@ def divisionMagique(i, j, M) -> tuple:
     r = i // M
     c = j // M
     return r, c
-    
+
 #Question 8.
 def produitMagique(cm1, cm2) -> list:
     '''Retourne le produit de cm1 et cm2.
@@ -183,7 +183,7 @@ def produitMagique(cm1, cm2) -> list:
             ligne += [M ** 2  * cmr[r][c]]
         produitMg += [ligne]
     return produitMg
-                    
+
 #Question 9.
 def additionMagique(cmf, cmm) -> list:
     '''Retourne une copie du damier final après adition de cmm à tous les sous-damiers.
@@ -206,7 +206,7 @@ def additionMagique(cmf, cmm) -> list:
             ligne += [cmf[i][j]  + cmm[r][c]]
         cmfNormal += [ligne]
     return cmfNormal
-    
+
 
 M = [[4, 9, 2],
 [3, 5, 7],
@@ -226,7 +226,7 @@ MFN = additionMagique(MF, M)
 
 """
 In [25]: MF
-Out[25]: 
+Out[25]:
 [[27, 27, 27, 117, 117, 117, 126, 126, 126, 0, 0, 0],
  [27, 27, 27, 117, 117, 117, 126, 126, 126, 0, 0, 0],
  [27, 27, 27, 117, 117, 117, 126, 126, 126, 0, 0, 0],
@@ -241,7 +241,7 @@ Out[25]:
  [135, 135, 135, 9, 9, 9, 18, 18, 18, 108, 108, 108]]
 
 In [26]: MFN
-Out[26]: 
+Out[26]:
 [[31, 36, 29, 121, 126, 119, 130, 135, 128, 4, 9, 2],
  [30, 32, 34, 120, 122, 124, 129, 131, 133, 3, 5, 7],
  [35, 28, 33, 125, 118, 123, 134, 127, 132, 8, 1, 6],
