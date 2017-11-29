@@ -1,10 +1,14 @@
 '''Algorithmes de base : Manipulation des tableaux à une dimension.
+
 A. MHAMEDI
+
 LYDEX 2017/18
+
 Objectifs:
-    1 Comment parcourir un tableau? accès aux éléments
-    2 Comment construir un résultat petit à petit? méthode incrémentale
-    3 Comment rechercher un élément dans un tableau? méthode de recherche
+
+    1. Comment parcourir un tableau? accès aux éléments
+    2. Comment construir un résultat petit à petit? méthode incrémentale
+    3. Comment rechercher un élément dans un tableau? méthode de recherche
 '''
 
 
@@ -15,11 +19,6 @@ def saisie(tab):
     for i in range(taille):
         tab[i] = eval(input('\n\t tab['+str(i)+'] = ? '))
 
-# Appel
-taille = 5  # variable globale
-A = [0] * taille
-saisie(A)
-
 
 ## PARCOURS : Ecriture
 def affichage(tab):
@@ -29,24 +28,18 @@ def affichage(tab):
         print('tab[', i, '] = ', tab[i], sep='', end='; ')
 
 
-# Appel
-A = [1, 2, 3, 4, 5, 8]
-affichage(A)
-
-
 ## METHODE INCREMENTALE : Somme
 def somme(Notes) -> float:
     '''Calcule la somme des notes.
+	
     Données:
-    -------
-        Notes : list, tableaux des notes
-        taille: int, nombre des notes
-        indice: int, indice d'une note dans le tableau
+    :param: Notes : list, tableaux des notes
+    :param: taille: int, nombre des notes
+    :param: indice: int, indice d'une note dans le tableau
     Sortie:
-    -------
-        somme : float, somme des notes.
+    :return: somme : float, somme des notes.
     Exemples:
-    --------
+
     >>> somme([15.2, 14.75, 20.0])
     49.95
     '''
@@ -58,26 +51,19 @@ def somme(Notes) -> float:
     return somme                    # 3. Renvoi du résultat final
 
 
-# Appel
-A = [15.2, 14.75, 20.0]
-
-resultat = somme(A)
-print('La somme est :', resultat)
-
-
 ## Moyenne
 def moyenne(Notes) -> float:
     '''Calcule la moyenne des notes.
     Données:
-    -------
+    
         Notes : list, tableaux des notes
         taille: int, nombre des notes
         som : float, somme des notes.
     Sortie:
-    -------
+    
         moy : float, moyenne des notes.
     Exemples:
-    --------
+
     >>> moyenne([15.25, 17.50, 19.0])
     17.25
     '''
@@ -91,7 +77,7 @@ def moyenne(Notes) -> float:
 def appartient(x, tab) -> bool:
     '''Teste si x fait partie de tab.
     Données
-    -------
+    
         tab : list, tableau d'entiers
         x   : int, valeur à chercher
     Sorite
@@ -99,6 +85,7 @@ def appartient(x, tab) -> bool:
         trouve : bool, True si x existe dans tab,
          False sinon
     Exemples
+	
     >>> appartient(0, [])
     False
     >>> appartient(0, [0, 5, 8])
@@ -111,13 +98,6 @@ def appartient(x, tab) -> bool:
             break
     return trouve
 
-# Appel
-t = [1, 2, 2, 5, 2, 8]
-x = 2
-
-resultat = appartient(x, t)
-print(x, 'appartient au tableau ?', resultat)
-
 
 ## RECHERCHE : Indice
 def indice(x, tab) -> int:
@@ -129,6 +109,7 @@ def indice(x, tab) -> int:
         ind : int, indice de x dans tab,
         -1 sinon
     Exemples
+	
     >>> indice(0, []) == -1
     True
     >>> indice(0, [0, 5, 8]) == 0
@@ -142,14 +123,6 @@ def indice(x, tab) -> int:
     return ind
 
 
-# Appel
-t = [1, 2, 2, 5, 2, 8]
-x = 2
-
-resultat = indice(x, t)
-print('L\'indice de', x, 'est', resultat)
-
-
 ## RECHERCHE : Comptage
 def compter(x, tab) -> int:
     '''Retourne le nombre d'occurrences x dans tab.
@@ -159,6 +132,7 @@ def compter(x, tab) -> int:
     Sorite
         cpt : int, compteur des x dans tab,
     Exemples
+	
     >>> compter(0, []) == 0
     True
     >>> compter(0, [0, 5, 8]) == 1
@@ -170,13 +144,6 @@ def compter(x, tab) -> int:
             cpt += 1
     return cpt
 
-# Appel
-t = [1, 2, 2, 5, 2, 8]
-x = 2
-
-resultat = compter(x, t)
-print('Le nombre d\'occurrences de', x, 'est', resultat)
-
 
 ## RECHERCHE : Minimum
 # Attention une fonction pédéfinie min existe déjà sera remplacée.
@@ -187,6 +154,7 @@ def min(tab) -> int:
     Sorite
         mn : int, valeur minimale
     Exemples
+	
     >>> min([0, 5, 8]) == 0
     True
     '''
@@ -196,25 +164,20 @@ def min(tab) -> int:
             mn = tab[i]
     return mn
 
-# Appel
-t = [1, 2, 2, 5, 2, 8]
-
-resultat = min(t)
-print('Le minimum est', resultat)
-
 
 ## RECHERCHE : Maximum
 # Attention une fonction pédéfinie max existe déjà sera remplacée.
 def max(tab) -> int:
     '''Retourne le maximum d'un tableau.
+	
     Données
-    -------
+    
         tab: list, tableau d'entiers
     Sorite
     ------
         mx : int, valeur maximale
     Exemples
-    --------
+
     >>> max([0, 5, 8]) == 8
     True
     '''
@@ -225,11 +188,6 @@ def max(tab) -> int:
             mx = tab[i]  # maximum provisoire
     return mx
 
-# Appel
-t = [1, 2, 2, 5, 2, 8]
-
-resultat = max(t)
-print('Le maximum est', resultat)
 
 ##
 def SommeTab(A, B):
@@ -241,8 +199,28 @@ def SommeTab(A, B):
         somAB += [A[i] + B[i]]
     return somAB
 
-# Appel
-t = [1, 2, 2, 5, 2, 8]
-
-resultat = SommeTab(t, t)
-print('La Somme est', resultat)
+	
+# PROGRAMME PRINCIPAL
+if __name__ == '__main__':
+	A = [15.2, 14.75, 20.0]
+	resultat = somme(A)
+	print('La somme est :', resultat)
+	taille = 5  # variable globale
+	A = [0] * taille
+	saisie(A)
+	affichage(A)
+	t = A
+	x = eval(input('Entrer une valeur : '))
+	resultat = appartient(x, t)
+	print(x, 'appartient au tableau ?', resultat)
+	resultat = indice(x, t)
+	print('L\'indice de', x, 'est', resultat)
+	resultat = compter(x, t)
+	print('Le nombre d\'occurrences de', x, 'est', resultat)
+	# Appel
+	resultat = min(t)
+	print('Le minimum est', resultat)
+	resultat = max(t)
+	print('Le maximum est', resultat)
+	resultat = SommeTab(t, t)
+	print('La Somme est', resultat)
