@@ -8,7 +8,9 @@ Les premiers carrés magiques d'ordres 5 et 6 apparurent dans une encyclopédie 
 ![Carré magique normal](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Magicsquareexample.svg/220px-Magicsquareexample.svg.png)
 
 __Un exemple de carré magique normal d’ordre 3 et de constante magique 15.__
-```python
+
+.. codeblock::python
+
     #Question 1.
     def sommeRangee(cm, r) -> int:
         '''Retourne la somme de la rangée r du carré magique cm.
@@ -115,6 +117,7 @@ Soit les carrés magiques M et N :
 
 
 ```python
+
     #Question 6.
     def reduireCMagique(cm) -> list:
         '''Retourne une copie de cm après réduction.
@@ -181,9 +184,11 @@ On désigne le gain ou la perte d'argent comme intérêt, profit / perte, gain/p
 ## Rendement arithmétique
 
 En termes mathématiques, on définit le "rendement arithmétique" comme suit :
-```math
+
+.. math::
+
     {\displaystyle RSI_{Arith}={\frac {V_{f}-V_{i}}{V_{i}}}={\frac {V_{f}}{V_{i}}}-1} RSI_{{Arith}}={\frac  {V_{f}-V_{i}}{V_{i}}}={\frac  {V_{f}}{V_{i}}}-1
-```
+
 où
 * ```math {\displaystyle V_{i}} ``` V_i est la valeur initiale de l'investissement et
 * ```{\displaystyle V_{f}}``` V_f est la valeur finale de l'investissement
