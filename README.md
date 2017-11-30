@@ -11,3 +11,18 @@
 1. le nombre de valeurs multiples de 3,
 1. le nombre de valeurs positives, paires et multiples de 3.
 Pour compter quelque chose dans un tableau, il faut utiliser… un compteur ! Le principe est simple : il consiste à initialiser une variable (qui servira de compteur) à zéro, puis parcourir le tableau grâce à une boucle (for de préférence) pour répéter un test (if) qui incrémentera le compteur seulement si la condition est vérifiée.
+
+```math
+
+    \sigma = \sqrt{\sum_{i=1}^n \frac{(x_i-m)^2}{n-1}}
+```
+
+Dans la suite de l'article, je noterai x la note de l'étudiant, m la moyenne originale, \sigma l'écart type original, x' la note harmonisée, m' la moyenne voulue, \sigma' l'écart type voulu.
+
+On peut extraire x' de cette formule pour obtenir la relation qui nous intéresse :
+```math
+
+x' = \frac{\sigma'}{\sigma} (x - m) + m'.
+Et voilà le travail !
+
+```
