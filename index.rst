@@ -11,22 +11,10 @@ Contents:
 .. toctree::
    :glob:
    :maxdepth: 2
-   
-   README
-   CBS/*
-   td4/Enonce
-   td5/Exercices
-   td6/*
-   td7/*
-   td8/*
-   
-   
-   
-   
 
-.. automodule:: td8
-   :members:
-   :undoc-members:
+   concoursblanc/SimpleExos
+
+
 
 Indices and tables
 ==================
@@ -34,4 +22,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

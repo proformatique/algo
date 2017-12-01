@@ -1,4 +1,4 @@
-﻿"""TD7 les tris.
+"""TD7 les tris.
 
 Tableaux à une dimension
 Objectifs
@@ -19,7 +19,6 @@ __author__ = 'A. MHAMEDI'
 __version__ = '0.1'
 
 import tp2.tp2_sol as tp2
-import tp3.tp3_sol as tp3
 # import du fichier TP2.py du Dossier TP2 sous le nom tp2
 # Sous Pyzo, Il faut cocher la case "Add path to python path"
 # Pyzo>>tools>>filebrowser>>star>>Add path to python path
@@ -139,7 +138,7 @@ def bonnePlace(T, i) -> int:
     bnplace = i
     for j in range(i, 0, -1):
         if T[j - 1] > T[i]:
-            bnplace = j
+            bnplace = j - 1
     return bnplace
 
 
@@ -171,17 +170,60 @@ def tri_insertion(T):
         T[j] = temp
 
 
-def tri_2d_selection(M, c):
-    """Trier un tableau à 2 D."""
-    fin = len(M)
-    for i in range(fin - 1):
-        im = i
-        mn = M[i][c]
-        for j in range(i + 1, fin):
-            if M[j][c] < mn:
-                im = j
-                mn = M[j][c]
-        tp3.permuterLignes(M, i, im)
+def permutationsuccessive2(T, i, j):
+    """Permute les éléments successifs mal ordonnés
+
+    parameters
+    ----------
+    T : list
+        tableau à une dimension.
+    i : int
+        Indice de départ.
+    j : int
+        Indice de fin.
+    Returns
+    -------
+    T : list
+        permutation de T
+    Examples
+    --------
+    >>> t = [2, 5, 3, 4]
+    >>> permutationsuccessive2(t, 0, 3)
+    >>> t
+    [2, 3, 4, 5]
+    """
+    assert i < j < len(T)
+    for r in range(i, j):
+        if T[r] > T[r + 1]:
+            T[r], T[r + 1] = T[r + 1], T[r]
+
+
+def triabulle1(T):
+    """Tri à bulle"""
+    for j in range(len(T)):  # Est-il nécessaire de parcourir tout le tableau?
+        permutationsuccessive2(T, 0, len(T))  # Opérations superflues
+
+
+# Optimisation 1
+def triabulle2(T):
+    """Tri à bulle"""
+    for j in range(len(T) - 1, 0, -1):  #
+        for r in range(j):
+            if T[r] > T[r + 1]:  # au passage on peut vérifier si T est trié
+                T[r], T[r + 1] = T[r + 1], T[r]
+
+
+# Optimisation 2
+def triabulle3(T):
+    """Tri à bulle"""
+    for j in range(len(T) - 1, 0, -1):  #
+        tritermine = True
+        for r in range(j):
+            if T[r] > T[r + 1]:
+                T[r], T[r + 1] = T[r + 1], T[r]
+                tritermine = False
+        if tritermine:
+            break
 
 
 # PROGRAMME PRINCIPAL

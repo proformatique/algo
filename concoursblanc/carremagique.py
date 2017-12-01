@@ -38,6 +38,7 @@ True
 True
 """
 
+
 # P1
 # Q 1
 def rsiarith(vi, vf) -> float:
@@ -59,7 +60,7 @@ def rsiarith(vi, vf) -> float:
     >>> rsiarith(2000, 2050)
     0.025
     """
-    rsi = (vf-vi)/vi
+    rsi = (vf - vi) / vi
     return rsi
 
 
@@ -88,6 +89,7 @@ def afficherrsi(rsi):
     elif 0 > rsi > -1:
         msg = perte
     print(msg)
+
 
 # Question 1.
 def sommeRangee(cm, r) -> int:
@@ -126,7 +128,7 @@ def sommeColonne(cm, c) -> int:
     Returns
     ----------
     sommeCl : int
-        somme de la colone
+        somme de la colonne.
     """
     sommeCl = 0
     for i in range(len(cm)):
