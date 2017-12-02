@@ -4,11 +4,12 @@ def comptertous(n: int) -> list:
     Parameters
     ----------
     n : int
-        Le nombre dont on veut compter les chiffres
+        Le nombre dont on veut compter les chiffres.
     Returns
     -------
     compteurs : list
         list des nombres des chiffres de n.
+		
     Examples
     --------
     >>> comptertous(45)
@@ -36,7 +37,8 @@ def distincts(n: int) -> bool:
     Returns
     -------
     dist : bool
-        True si les chiffres de n sont distincts, False sinon
+        True si les chiffres de n sont distincts, False sinon.
+		
     Examples
     --------
     >>> distincts(45)

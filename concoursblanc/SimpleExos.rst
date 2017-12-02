@@ -1,5 +1,7 @@
+Concours Blanc
+""""""""""""""
 Exercices
-""""""""""
+^^^^^^^^^^^^^^
 Les tris
 ------------
 
@@ -7,7 +9,7 @@ Les tris
 
     .. code:: python
 
-        def enOrdreCroissant() -> bool:
+        def enOrdreCroissant(T: list) -> bool:
 
     .. autofunction:: tri.enOrdreCroissant
 
@@ -17,7 +19,7 @@ Les tris
 
     .. code:: python
 
-        def enOrdreDecroissant() -> bool:
+        def enOrdreDecroissant(T: list) -> bool:
 
     .. autofunction:: tri.enOrdreDecroissant
 

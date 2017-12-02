@@ -65,7 +65,8 @@ def dichotomie(T: list, v: float):
     Returns
     -------
     ind : int
-        indice de la valeurs recherchée ou -1.
+        indice de la valeur recherchée ou -1.
+
     Examples
     --------
     >>> tab = [12, 15, 30, 45, 46, 79]

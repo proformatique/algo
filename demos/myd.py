@@ -12,8 +12,9 @@ def menu(titre, options, message, c=1):
             mnu += '\n'
     print(mnu+ '\n'+'-' * 80)
     return int(input(message + ' : ')) - 1
-    
-pth = realpath(dirname(sys.argv[0]))
-demos = [file for file in listdir(pth) if file.startswith('demo')]
-choix = menu('Demos', demos, 'Choisissez la demo : ')
-suivant = Demo(demos[choix])
+
+if __name__ == '__main__':
+    pth = realpath(dirname(sys.argv[0]))
+    demos = [file for file in listdir(pth) if file.startswith('demo')]
+    choix = menu('Demos', demos, 'Choisissez la demo : ')
+    suivant = Demo(demos[choix])

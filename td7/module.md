@@ -1,5 +1,5 @@
 Les tris de base
-========
+================
 
 Submodules
 ----------
