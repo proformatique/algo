@@ -258,7 +258,7 @@ def diminuerCMagique(cm) -> list:
     Parameters
     ----------
     cm : tableau
-        carré magique d'ordre M.
+        carré magique d'ordre N.
 
     Returns
     ----------
@@ -284,9 +284,9 @@ def divisionMagique(i, j, M) -> tuple:
     M : int
         Ordre du premier carré magique
     i : int
-        Indice de ligne d'une case dans le carrée d'ordre N * M.
+        Indice de ligne d'une case dans le carrée d'ordre MxN.
     j : int
-        Indice de colonne d'une case dans le carrée d'ordre N * M.
+        Indice de colonne d'une case dans le carrée d'ordre MxN.
 
     Returns
     ----------
@@ -365,4 +365,4 @@ def additionMagique(cmf, cmm) -> list:
 
 if __name__ == "__main__":
     import doctest as dt
-    dt.testmod(verbose=True)
+    dt.testmod()
