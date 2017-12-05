@@ -1,31 +1,23 @@
 def comptertout(texte):
-    """
-    Format the exception with a traceback.
+    """Compter le nombre d'occurrence de chaque lettre.
 
     Parameters
     ----------
-    etype : str
-        exception type
-    value : int
-        exception value
-    tb : traceback
-        traceback object
-    limit : int or None
-        maximum number of stack frames to show
+    texte : str
+        texte de départ
 
     Returns
     -------
-    out : list of strings
-        list of strings
+    compteurs : list des int
+        liste des compteurs
 
     See Also
     --------
-    numpy : a numerical package
+    td5.compter : a numerical package
 
     Notes
     -----
-    This is an example of autodoc using numpydoc, the Numpy documentation format
-    with the numpydoc extension [1]_
+        with the numpydoc extension [1]_
 
     This explanation of the column headers is not complete, for an exhaustive
     specification see [2]_.

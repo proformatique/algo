@@ -42,6 +42,7 @@ Question 4.	Ecrire une fonctionretourne True si le tableau T représente une ét
 .. image:: etoilemagique.png
 
 Question 5.	Ecrire une fonction qui retourne la somme des éléments d'un segment entre (i_d,j_d), et (i_f,j_f), avec:
+
 •	i_d ligne de début
 •	j_d colonne de début
 •	i_f ligne de fin
@@ -59,4 +60,3 @@ Question 6.	Ecrire une procédure qui permet de remplir un tableau comme dans l'
     def remplissage2(tab):
 
 .. image:: spirale.png
-

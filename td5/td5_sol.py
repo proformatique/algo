@@ -31,7 +31,7 @@ def affichage(tab):
 ## METHODE INCREMENTALE : Somme
 def somme(Notes) -> float:
     '''Calcule la somme des notes.
-	
+    
     Données:
     :param: Notes : list, tableaux des notes
     :param: taille: int, nombre des notes
@@ -85,7 +85,7 @@ def appartient(x, tab) -> bool:
         trouve : bool, True si x existe dans tab,
          False sinon
     Exemples
-	
+    
     >>> appartient(0, [])
     False
     >>> appartient(0, [0, 5, 8])
@@ -109,7 +109,7 @@ def indice(x, tab) -> int:
         ind : int, indice de x dans tab,
         -1 sinon
     Exemples
-	
+    
     >>> indice(0, []) == -1
     True
     >>> indice(0, [0, 5, 8]) == 0
@@ -132,7 +132,7 @@ def compter(x, tab) -> int:
     Sorite
         cpt : int, compteur des x dans tab,
     Exemples
-	
+    
     >>> compter(0, []) == 0
     True
     >>> compter(0, [0, 5, 8]) == 1
@@ -154,7 +154,7 @@ def min(tab) -> int:
     Sorite
         mn : int, valeur minimale
     Exemples
-	
+    
     >>> min([0, 5, 8]) == 0
     True
     '''
@@ -169,7 +169,7 @@ def min(tab) -> int:
 # Attention une fonction pédéfinie max existe déjà sera remplacée.
 def max(tab) -> int:
     '''Retourne le maximum d'un tableau.
-	
+    
     Données
     
         tab: list, tableau d'entiers
@@ -199,28 +199,28 @@ def SommeTab(A, B):
         somAB += [A[i] + B[i]]
     return somAB
 
-	
+    
 # PROGRAMME PRINCIPAL
 if __name__ == '__main__':
-	A = [15.2, 14.75, 20.0]
-	resultat = somme(A)
-	print('La somme est :', resultat)
-	taille = 5  # variable globale
-	A = [0] * taille
-	saisie(A)
-	affichage(A)
-	t = A
-	x = eval(input('Entrer une valeur : '))
-	resultat = appartient(x, t)
-	print(x, 'appartient au tableau ?', resultat)
-	resultat = indice(x, t)
-	print('L\'indice de', x, 'est', resultat)
-	resultat = compter(x, t)
-	print('Le nombre d\'occurrences de', x, 'est', resultat)
-	# Appel
-	resultat = min(t)
-	print('Le minimum est', resultat)
-	resultat = max(t)
-	print('Le maximum est', resultat)
-	resultat = SommeTab(t, t)
-	print('La Somme est', resultat)
+    A = [15.2, 14.75, 20.0]
+    resultat = somme(A)
+    print('La somme est :', resultat)
+    taille = 5  # variable globale
+    A = [0] * taille
+    saisie(A)
+    affichage(A)
+    t = A
+    x = eval(input('Entrer une valeur : '))
+    resultat = appartient(x, t)
+    print(x, 'appartient au tableau ?', resultat)
+    resultat = indice(x, t)
+    print('L\'indice de', x, 'est', resultat)
+    resultat = compter(x, t)
+    print('Le nombre d\'occurrences de', x, 'est', resultat)
+    # Appel
+    resultat = min(t)
+    print('Le minimum est', resultat)
+    resultat = max(t)
+    print('Le maximum est', resultat)
+    resultat = SommeTab(t, t)
+    print('La Somme est', resultat)
