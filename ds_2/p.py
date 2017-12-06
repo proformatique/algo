@@ -1,7 +1,7 @@
 
 def comptertout0(texte):
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'  
-    cpt = [0] * len(alphabet)  # 0
+    alphabet = 'abcdefghijklmnopqrstuvwxyz' # i 
+    cpt = [0] * len(alphabet)               # i
     for car in texte:         # PARCOURS
         i = alphabet.index(car)  # COMPARAISON
         #i = indice(car, alphabet)        

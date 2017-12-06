@@ -43,10 +43,11 @@ Question 4.	Ecrire une fonctionretourne True si le tableau T représente une ét
 
 Question 5.	Ecrire une fonction qui retourne la somme des éléments d'un segment entre (i_d,j_d), et (i_f,j_f), avec:
 
-•	i_d ligne de début
-•	j_d colonne de début
-•	i_f ligne de fin
-•	j_f colonne de fin
+*	i_d ligne de début
+*	j_d colonne de début
+*	i_f ligne de fin
+*	j_f colonne de fin
+
 (*sans faire appel aux autres fonctions)
 
 .. code:: python
@@ -60,3 +61,8 @@ Question 6.	Ecrire une procédure qui permet de remplir un tableau comme dans l'
     def remplissage2(tab):
 
 .. image:: spirale.png
+
+----
+
+#. Définissez une fonction qui retourne la liste des nombres d'occurrences de chaque lettre *car* dans un texte *texte*.
+#. Définissez une fonction qui prend un *texte* et retourne une version sans doublons du texte *texte*.

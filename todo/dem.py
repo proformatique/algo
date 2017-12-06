@@ -1,6 +1,9 @@
 from matplotlib import pyplot as plt
-lesx = [0, 1, 8, 9, 10]
-lesy = [8, 9, 8, 7, 12]
+def f(x):
+    return x ** 2
+
+lesx = range(-20, 20)
+lesy = [f(x) for x in lesx]
 
 plt.plot(lesx, lesy)
 plt.show()

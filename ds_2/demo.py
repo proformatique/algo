@@ -8,3 +8,9 @@ while j < len(tab):
     j += 1
     # => I : resultat == sum(tab[:j])
 print(resultat)
+# I : resultat == sum(tab[:j]) (j = len(tab))
+
+
+
+
+
