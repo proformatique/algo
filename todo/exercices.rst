@@ -47,6 +47,7 @@ Question 5.	Ecrire une fonction qui retourne la somme des éléments d'un segmen
 •	j_d colonne de début
 •	i_f ligne de fin
 •	j_f colonne de fin
+
 (*sans faire appel aux autres fonctions)
 
 .. code:: python

@@ -1,4 +1,5 @@
-﻿path = {
+
+path = {
     'A' : ['A', 'E', 'B'],
     'B' : ['A', 'E', 'D', 'C'],
     'C' : ['B', 'E', 'D'],
@@ -6,6 +7,7 @@
     'E' : ['B', 'A', 'D']
 }
 myp = []
+
 
 def helper(myp, c, n):
     if n == 0:
@@ -40,7 +42,7 @@ def visited(path, seg):
     yes = seg in path or seg2 in path
     # print('visited', path, seg, seg2, yes)
     return yes
-    
+
 def traverser(path, seg):
     path.append(seg)
 
@@ -51,7 +53,7 @@ def notvisited(path, possib):
         if not visited(path, seg):
             nv.append(seg)
     return nv
-            
+
 def possibilities(G, path, de=None):
     pos = []
     if not de or de not in G.keys():
@@ -65,7 +67,7 @@ def possibilities(G, path, de=None):
         pos.append(seg)
     pos = notvisited(path, pos)
     return pos
-    
+
 G = {'A' : ['B', 'E'],
      'B' : ['A', 'E', 'C', 'D'],
      'C' : ['B', 'E', 'D'],
@@ -99,15 +101,15 @@ def explore(G, path=[], choice=None):
             if len(path) > 0:
                 path.pop()
         return False
-    
+
 ## parties d'un ensemble
 ens = [1,2,3]
 
 def partie(ens, part=[]):
-    
+
     if 0 == len(ens):
         print(part)
-        return True 
+        return True
     else:
         o = ens[:i]
         for i in range(len(part)):
@@ -118,8 +120,8 @@ def partie(ens, part=[]):
             part.pop()
 
 ##
-def anagram(ls, p=[], i):
-    
+def anagram(ls, i,  p=[]):
+
     for c in ls:
         p.append(c)
         anagram(ls, p, c)
@@ -154,4 +156,3 @@ def parties(liste, chosen=[], choice=''):
             chosen.pop()
             parties(liste, chosen)
             liste.append(d)
-            

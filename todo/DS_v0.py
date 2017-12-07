@@ -1,31 +1,35 @@
 # DS
 def  jour(pj, j):
     '''Affiche le nom du jour j.
-    Données
-    -------
+    Parameters
+    -----------
     j : int: jour à afficher
     pj: int: premier jour du mois
     jours : list, les jours de la semaine
-    Sortie
-    ------
+    Returns
+    -------
     nomdujour : str, nom du jour demandé
-    >>> jour(7, 2) # le mois commence par un Dimanche, le deuxième jour est Lundi
+    >>> jour(7, 2) # le mois commence par un Dimanche, le 2em jour est Lundi
     'Lundi'
     '''
-    assert 1<= pj <= 7 and 1 <= j <=31, 'Données non valides'
+    assert 1 <= pj <= 7 and 1 <= j <= 31, 'Données non valides'
     jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
-    nomdujour = jours[(j+pj-2)% 7]
+    nomdujour = jours[(j + pj - 2) % 7]
     return nomdujour
+
 
 def extremum(meteo, mesure, max):
     '''Affiche le nom du jour j.
-    Données
+    Parameters
+    -----------
+    mesure : int
+        0 et 1 température, 2 précipitations
+    meteo : list
+        tableau des données enregistrées pendant un mois.
+    Returns
     -------
-    mesure : int, 0 et 1 température, 2 précipitations
-    meteo : list: tableau des données enregistrées pendant un mois.
-    Sortie
-    ------
-    minim : float, valeur minimale
+    minim : float
+        valeur minimale
     >>> extremum(meteo, 0, False) # minimum des températures minimales
     >>> extremum(meteo, 1, True)  # maximum des températures maximales
     '''
@@ -37,7 +41,8 @@ def extremum(meteo, mesure, max):
         if (condition):
             ext = dt
     return ext
-    
+
+
 def recherche(meteo, mesure, valeur):
     for i in range(len(meteo[mesure])):
         dt = meteo[mesure][i]
@@ -46,13 +51,15 @@ def recherche(meteo, mesure, valeur):
             jour = i + 1
     return jour
 
+
 def cumul(meteo, mesure):
     cu = []
-    som = 0 
+    som = 0
     for i in range(len(meteo[mesure])):
         som += meteo[mesure][i]
         cu += [som]
     return cu
+
 
 def rechercheMax(meteo):
     valeur = meteo[1][0] - meteo[0][0]
@@ -65,9 +72,10 @@ def rechercheMax(meteo):
             valeur = dt
     return jour
 
+
 def afficher(meteo, pj):
     for i in range(len(meteo)):
-        print(jour(pj, i+1)+' : ' + str(i+1)+ "/01/2017 Cumul", meteo[i])
+        print(jour(pj, i + 1) + ' : ' + str(i + 1) + "/01/2017 Cumul", meteo[i])
 #          0    1    2    3    4    5    6    7    8    9     10   11   12   13   14   15
 Tempmin = [4.2, 3.8, 4.0, 5.0, 4.4, 4.3, 5.6, 5.9, 4.7, 4.7,  5.3, 4.8, 5.1, 7.5, 4.9, 3.3,
            2.1, 3.7, 7.6, 3.5, 2.5, 2.2, 1.5, 3.2, 2.1, 1.2, 10.9, 7.5, 6.5, 6.2, 7.2]
@@ -93,7 +101,6 @@ jourmn = recherche(meteo, mesure, min)
 jourMax = rechercheMax(meteo)
 print('Le maximum de la température maximale ', max,' a été enregisré', jour(premierjour, jourmx),' le', jourmx, '/01/2017')
 print('Le minimum de la température maximale ', min,' a été enregisré ', jour(premierjour, jourmn), 'le', jourmn, '/01/2017')
-print('L\'amplitude maximale a été enregisrée ', jour(premierjour, jourMax), 'le', jourMax, '/01/2017') 
+print('L\'amplitude maximale a été enregisrée ', jour(premierjour, jourMax), 'le', jourMax, '/01/2017')
 mesure = 2
 afficher(cumul(meteo, mesure), premierjour)
-   
