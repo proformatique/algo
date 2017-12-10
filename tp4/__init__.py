@@ -14,10 +14,14 @@ __author__ = 'A. MHAMEDI'
 __version__ = '0.1'
 
 
-
 # Parcours
-def palindrome(texte:str) -> bool:
-    """Retourne True si texte se lit des deux sens par ex. s.o.s"
+def palindrome(texte: str) -> bool:
+    """Retourne True si texte se lit des deux sens par ex. s.o.s
+
+    Examples
+    --------
+    >>> palindrome('S.O.S')
+    True
     """
 
 
@@ -39,7 +43,7 @@ def inverser(texte: str) -> str:
     's.o.s'
     >>> inverser('matplotlib')
     'biltolptam'
-    
+
     See also
     --------
     tp2.inverser : permutation symétrique
@@ -50,7 +54,7 @@ def inverser(texte: str) -> str:
     return copie
 
 
-def remplacer(mot1:str, mot2:str, texte: str) -> str:
+def remplacer(mot1: str, mot2: str, texte: str) -> str:
     """Retourne une version de texte avec mot2 au lieu de mot1
 
     Parameters
@@ -86,11 +90,10 @@ def remplacer(mot1:str, mot2:str, texte: str) -> str:
     return copie
 
 
-
 # Recherche
 def estrotation(mot1: str, mot2: str) -> bool:
     """Vérifie si le mot2 est une rotation de mot1.
-    
+
     Examples
     --------
     >>> estrotation('abcde', 'cdeab')
@@ -99,29 +102,28 @@ def estrotation(mot1: str, mot2: str) -> bool:
     return len(mot1) == len(mot2) and mot1 in mot2 * 2
 
 
-
 # Rotation
 def rotation(mot: str, decalage: int) -> str:
     """Crée une rotation du mot par un décalage des caractères.
-    
+
     Examples
     --------
     >>> rotation('abcde', 1)
     'bcdea'
     >>> rotation('abcde', 3)
     'deabc'
-    
+
     """
     n = len(mot)
     copie = ''
     for i in range(n):
         copie += mot[(i + decalage) % n]
     return copie
-    
+
 
 def supprimerEspaces(texte: str) -> str:
     """Retourne une version de texte sans espaces superflues.
-    
+
     Examples
     --------
     >>> supprimerEspaces('     un     texte      ')
@@ -134,7 +136,7 @@ def supprimerEspaces(texte: str) -> str:
 if __name__ == "__main__":
     import doctest as dt
     dt.testmod(verbose=True)
-    
+
     with open(r'contacts\contacts.ctc', encoding='utf-8') as fictc:
         contacts = fictc.read()
 
@@ -149,6 +151,4 @@ if __name__ == "__main__":
                 mot1 = motsaremplacer[i]
                 mot2 = remplacants[i]
                 contact = remplacer(mot1, mot2, contact)
-            print(contact)
-            print()
-                
+            print(contact, '\n' * 2)

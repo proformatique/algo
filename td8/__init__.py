@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """Td8 : chaînes de caractères.
 
 Objectifs :
@@ -75,7 +75,7 @@ def sansdoublons(texte: str) -> str:
     return copie
 
 
-def comptertout(texte) -> list:
+def comptertout(texte: str) -> list:
     """Compte le nombre d'occurrences de chaque lettre dans un *texte*.
 
     Parameters
@@ -121,13 +121,12 @@ def affichertout(texte: str):
     t : 12
     e : 12
     x : 6
-    
     """
     tex = sansdoublons(texte)
     compteurs = comptertout(texte)
-    resultat = ''
-    for i in range(len(tex)):
-        ligne = "{} : {}\n".format(tex[i], compteurs[i])
+    resultat = "%s : %s" % (tex[0], compteurs[0])
+    for i in range(1, len(tex)):
+        ligne = "\n{} : {}".format(tex[i], compteurs[i])
         resultat += ligne
     print(resultat)
 
