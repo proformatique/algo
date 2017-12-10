@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """Td8 : chaînes de caractères.
 
 Objectifs :
 
-    #. Compter tous les occurrences de chaque caractère d'un texte
+    #. Compter toutes les occurrences de chaque caractère d'un texte
     #. Utiliser les listes et les chaînes (lien logique par indice)
     #. Supprimer les doublons d'un texte (nouvelle copie)
 """

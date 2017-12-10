@@ -156,3 +156,20 @@ def parties(liste, chosen=[], choice=''):
             chosen.pop()
             parties(liste, chosen)
             liste.append(d)
+
+
+if __name__ == '__main__':
+    import doctest as dt
+    dt.testmod(verbose=True)
+
+
+
+
+
+
+
+
+
+
+
+
