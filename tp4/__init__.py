@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""TP4 : chaînes de caractères.
+"""TP4.
+
+Chaînes de caractères.
 ================================
 
 Objectifs :
@@ -16,27 +18,33 @@ __version__ = '0.1'
 
 # Parcours
 def palindrome(texte: str) -> bool:
-    """Retourne True si texte se lit des deux sens par ex. s.o.s
+    """Retourne True si texte se lit des deux sens par ex. s.o.s.
 
     Examples
     --------
     >>> palindrome('S.O.S')
     True
     """
+    for i in range(len(texte)//2):
+        if texte[i] != texte[~i]:
+            return False
+    return True
 
 
 # Copie
 def inverser(texte: str) -> str:
-    """Retourne une version de texte à l'envers
+    """Retourne une version de texte à l'envers.
 
     Parameters
     ----------
     texte : str
         texte source
+
     Returns
     -------
     copie : str
         texte à l'envers
+
     Examples
     --------
     >>> inverser('s.o.s')
@@ -55,7 +63,7 @@ def inverser(texte: str) -> str:
 
 
 def remplacer(mot1: str, mot2: str, texte: str) -> str:
-    """Retourne une version de texte avec mot2 au lieu de mot1
+    """Retourne une version de texte avec mot2 au lieu de mot1.
 
     Parameters
     ----------

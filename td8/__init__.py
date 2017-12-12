@@ -49,7 +49,7 @@ def comptertout1(texte) -> list:
 
 
 def sansdoublons(texte: str) -> str:
-    """Retourne une version sans doublons de texte
+    """Retourne une version sans doublons de texte.
 
     Parameters
     ----------
@@ -100,6 +100,7 @@ def comptertout(texte: str) -> list:
     """
     # alphabet = 'abcdefghijklmnopqrstuvwxyz'
     alphabet = sansdoublons(texte)
+    # alphabet = sansponctuation(alphabet)
     compteurs = [0] * len(alphabet)
     for caractere in texte:
         # i = texte.index(caractere)
@@ -115,6 +116,7 @@ def affichertout(texte: str):
     ----------
     texte : str
         texte source
+
     Examples
     --------
     >>> affichertout('texte' * 6)
@@ -124,13 +126,15 @@ def affichertout(texte: str):
     """
     tex = sansdoublons(texte)
     compteurs = comptertout(texte)
-    resultat = "%s : %s" % (tex[0], compteurs[0])
+    # resultat = "%s : %s" % (tex[0], compteurs[0])
+    resultat = "{} : {}".format(tex[0], compteurs[0])
     for i in range(1, len(tex)):
         ligne = "\n{} : {}".format(tex[i], compteurs[i])
         resultat += ligne
     print(resultat)
 
 
+# programme principal
 if __name__ == "__main__":
     import doctest as dt
     dt.testmod()
