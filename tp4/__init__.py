@@ -12,13 +12,24 @@ Objectifs :
     #. Supprimer les espaces superflues d'une chaîne de caractères
 """
 
-__author__ = 'A. MHAMEDI'
 __version__ = '0.1'
+__author__ = 'A. MHAMEDI'
+
 
 
 # Parcours
 def palindrome(texte: str) -> bool:
     """Retourne True si texte se lit des deux sens par ex. s.o.s.
+    
+    Parameters
+    ----------
+    texte:
+        texte source à vérifier.
+    
+    Returns
+    -------
+    pal :
+        True si le texte est un palindrome, sinon False.
 
     Examples
     --------
@@ -37,12 +48,12 @@ def inverser(texte: str) -> str:
 
     Parameters
     ----------
-    texte : str
+    texte :
         texte source
 
     Returns
     -------
-    copie : str
+    copie :
         texte à l'envers
 
     Examples
@@ -67,14 +78,18 @@ def remplacer(mot1: str, mot2: str, texte: str) -> str:
 
     Parameters
     ----------
-    texte : str
+    texte :
         texte source
-    mot1 : str
+    mot1 :
         mot à remplacer
+    mot2 :
+        mot de remplacement
+    
     Returns
     -------
-    mot2 : str
-        mot de remplacement
+    copie: str
+        texte modifié
+    
     Examples
     --------
     >>> remplacer('im', '', 'impossible')
@@ -101,6 +116,9 @@ def remplacer(mot1: str, mot2: str, texte: str) -> str:
 # Recherche
 def estrotation(mot1: str, mot2: str) -> bool:
     """Vérifie si le mot2 est une rotation de mot1.
+    
+    :param mot1: premier mot
+    :param mot2: deuxième mot
 
     Examples
     --------

@@ -155,8 +155,8 @@ def sommeDiagPrincipale(cm, d) -> int:
     """
     sommeDg = 0
     for i in range(len(cm)):
-        idiag = i if d == 1 else len(cm) - 1 - i
-        sommeDg += cm[idiag][idiag]
+        j = i if d == 1 else len(cm) - 1 - i
+        sommeDg += cm[i][j]
     return sommeDg
 
 
@@ -365,4 +365,4 @@ def additionMagique(cmf, cmm) -> list:
 
 if __name__ == "__main__":
     import doctest as dt
-    dt.testmod()
+    dt.testmod(verbose=True)
