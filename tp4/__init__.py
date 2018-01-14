@@ -107,6 +107,7 @@ def remplacer(mot1: str, mot2: str, texte: str) -> str:
         if n and mot1 == texte[i:i + n]: # lazy evaluation
             copie += mot2
             i += n # si n == 0 boucle infinie
+            # i += n if n > m else m # pour la forme des cartes
         else:
             copie += texte[i]
             i += 1
@@ -127,6 +128,29 @@ def estrotation(mot1: str, mot2: str) -> bool:
     """
     return len(mot1) == len(mot2) and mot1 in mot2 * 2
 
+def estrotation2(mot1: str, mot2: str) -> bool:
+    """Vérifie si le mot2 est une rotation de mot1.
+    
+    :param mot1: premier mot
+    :param mot2: deuxième mot
+
+    Examples
+    --------
+    >>> estrotation2('abcde', 'cdeab')
+    True
+    """
+    # return len(mot1) == len(mot2) and mot1 in mot2 * 2
+    i = 0
+    n = len(mot1)
+    m = len(mot2)
+    while i < n:
+        j = 0
+        while j < n and mot1[j] == mot2[(i + j) % n]:
+            j += 1
+        if j == n:
+            return True
+        i += 1
+    return False
 
 # Rotation
 def rotation(mot: str, decalage: int) -> str:
