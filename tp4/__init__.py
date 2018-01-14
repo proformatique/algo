@@ -104,9 +104,9 @@ def remplacer(mot1: str, mot2: str, texte: str) -> str:
     n = len(mot1)
     m = len(mot2)
     while i < len(texte):
-        if n and mot1 == texte[i:i + n]:
+        if n and mot1 == texte[i:i + n]: # lazy evaluation
             copie += mot2
-            i += m if m > n else n
+            i += n # si n == 0 boucle infinie
         else:
             copie += texte[i]
             i += 1
@@ -168,10 +168,10 @@ if __name__ == "__main__":
 
     with open(r'contacts\data.vip', encoding='utf-8') as ficvip:
         for ligne in ficvip:
-            if 'nom' in ligne:
+            if 'nom' in ligne: # premiere ligne
                 motsaremplacer = ligne.split()
                 continue
-            remplacants = ligne.split()
+            remplacants = ligne.split() # le reste des lignes
             contact = contacts
             for i in range(len(motsaremplacer)):
                 mot1 = motsaremplacer[i]
