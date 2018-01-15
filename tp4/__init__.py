@@ -106,8 +106,8 @@ def remplacer(mot1: str, mot2: str, texte: str) -> str:
     while i < len(texte):
         if n and mot1 == texte[i:i + n]: # lazy evaluation
             copie += mot2
-            i += n # si n == 0 boucle infinie
-            # i += n if n > m else m # pour la forme des cartes
+            #i += n # si n == 0 boucle infinie
+            i += n if n > m else m # pour la forme des cartes
         else:
             copie += texte[i]
             i += 1
@@ -182,18 +182,22 @@ def supprimerEspaces(texte: str) -> str:
     copie = ''
     return copie
 
-
+# Partie II
 if __name__ == "__main__":
     import doctest as dt
     dt.testmod(verbose=True)
-
+    # Q 1
+    with open('data0.txt', encoding='utf-8') as df:
+        for line in df:
+            print(inverser(line), end='')
+    # Q 2
     with open(r'contacts\contacts.ctc', encoding='utf-8') as fictc:
         contacts = fictc.read()
-
+    
     with open(r'contacts\data.vip', encoding='utf-8') as ficvip:
         for ligne in ficvip:
-            if 'nom' in ligne: # premiere ligne
-                motsaremplacer = ligne.split()
+            if 'nom' in ligne: # première ligne dans le fichier data.vip
+                motsaremplacer = ligne.split() # liste des mots
                 continue
             remplacants = ligne.split() # le reste des lignes
             contact = contacts
