@@ -185,14 +185,14 @@ def supprimerEspaces(texte: str) -> str:
 # Partie II
 if __name__ == "__main__":
     import doctest as dt
-    dt.testmod(verbose=True)
+    dt.testmod(verbose=False)
     # Q 1
     with open('data0.txt', encoding='utf-8') as df:
         for line in df:
             print(inverser(line), end='')
     # Q 2
     with open(r'contacts\contacts.ctc', encoding='utf-8') as fictc:
-        contacts = fictc.read()
+        model = fictc.read()
     
     with open(r'contacts\data.vip', encoding='utf-8') as ficvip:
         for ligne in ficvip:
@@ -200,9 +200,9 @@ if __name__ == "__main__":
                 motsaremplacer = ligne.split() # liste des mots
                 continue
             remplacants = ligne.split() # le reste des lignes
-            contact = contacts
+            modelmodif = model
             for i in range(len(motsaremplacer)):
                 mot1 = motsaremplacer[i]
                 mot2 = remplacants[i]
-                contact = remplacer(mot1, mot2, contact)
-            print(contact, '\n' * 2)
+                modelmodif = remplacer(mot1, mot2, modelmodif)
+            print(modelmodif, '\n' * 2)
