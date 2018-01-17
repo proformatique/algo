@@ -1,95 +1,131 @@
-# DEFINITIONS
-def time2seconds(time: str) -> int:
-    if ':' in time:
-        h, m, s = time.split(':')
-    else:
-        h = 0
-        m, s = time.rstrip('s').split('min ')
-    s = int(s)
-    m = int(m)
-    h = int(h)
-    temps = h * 60 ** 2 + m * 60 + s 
-    return temps
+# -*- coding: utf-8 -*-
+"""Tp5 : chaînes de caractères.
+
+Objectifs :
+
+    #. Coder texte en utilisant les codes avautk, k7 et césar
+    #. Utiliser les tables de codage (lien logique par indice)
+    #. Utiliser Variable globale au lieu de Variable locale
+"""
+
+__author__ = 'A. MHAMEDI'
+__version__ = '0.1'
 
 
-def datetuple(dt : str) -> tuple:
-    """Convertit une str en tuple d'entiers.
+# variables globales
+#indice 00000000001111111111222222
+#       01234567890123456789012345
+alph = 'abcdefghijklmnopqrstuvwxyz'
+code = 'klmnopqrstuvwxyzabcdefghij'
+c_k7 = 'xyzabcdefghijklmnopqrstuvw'
+
+
+
+def avautk(lettre : str) -> str:
+    '''Code une lettre en utilisant le code 'a' vaut 'k' (a->k).
     
     Parameters
     ----------
-    dt 
-        date sous la forme jj/mm/aaaa
+    lettre:
+        caracère à coder.
+    
     Returns
     -------
-    date
-        date sous forme de tuple d'entiers
+    car:
+        code de la lettre.
+
+
+    Examples
+    --------
+    >>> avautk('a')
+    'k'
+    '''
+    # variable locales
+    # alph = 'abcdefghijklmnopqrstuvwxyz'
+    # code = 'klmnopqrstuvwxyzabcdefghij'
+    car = code[alph.index(lettre)]
+    return car
+
+def codeavautk(texte: str) -> str:
+    '''Code un texte en utilisant le code 'a' vaut 'k'.
+    
+    Parameters
+    ----------
+    texte:
+        texte à coder.
+    
+    Returns
+    -------
+    copie : texte codé.
+
+    Examples
+    --------
+    >>> codeavautk('a bc')
+    'k lm'
+    '''
+    # variables locales
+    # alph = 'abcdefghijklmnopqrstuvwxyz'
+    copie = ''
+    for car in texte:
+        if car in alph:
+            car = avautk(car)
+        copie += car
+    return copie
+
+def k7(lettre: str) -> str:
+    '''Code une lettre en utilisant le
+    code k7 (k->7).
     
     Examples
     --------
-    >>> datetuple('12/12/2017')
-    (12, 12, 2017)
-    """
-    j, m, a = map(int, dt.split('/'))
-    return j, m, ad 
+    >>> k7('k')
+    'h'
+    '''
+    return c_k7[alph.index(lettre)]
+
+
+def cesar(lettre:str, rot:int)-> str:
+    '''Code une lettre en utilisant le code cesar.
     
-def format(temps: int, duree: bool) -> str:
-    m = temps // 60
-    s = temps % 60
-    msg = '%0dmin %0ds'
-    data = m, s
-    j = (m // 60) // 24
-    if not duree:
-        h = (m // 60) % 24
-        m %= 60
-        data = h, m, s
-        msg = '%0d:%0d:%0d'
-    return msg % data, j
-
-def filtrer(**criteres):
-    pass
-
-
-def tempsdefin(date, temps, duree):
-    temps = time2seconds(temps)
-    duree = time2seconds(duree)
-    heurefin, jourok = format(temps + duree, False)
-    # date = datesuivante(*datetuple(date)) if jourok else date
-    date = "Le lendemain" if jourok else "le jour même"
-    return date, heurefin
-
-
-def analyser(contenu) -> list:
-    """Analyse le contenu du fichier appels.csv.
-    """
-    l_contenu = contenu.split('\n')
-    titres = l_contenu[0].split(';')
-    # print(titres)
-    ll_contenu = []
-    for i in range(1, len(l_contenu)):
-        appel = l_contenu[i].split(';')
-        ll_contenu.append(appel)
-    return ll_contenu
-
-
-def etendre(ll_contenu : list):
-    for i in range(len(ll_contenu)):
-        date, temps, duree = ll_contenu[i][1:]
-        date = tempsdefin(date, temps, duree)
-        ll_contenu[i].extend(date)
-
-def backtotext(ll_contenu) -> str:
-    for i in range(len(ll_contenu)):
-        ll_contenu[i] = ';'.join(ll_contenu[i])
-    return '\n'.join(ll_contenu)
+    '''
+    #i = alph.index(lettre)
+    i = indice(lettre, alph)
+    return alph[(i + rot) % len(alph)]
+   
+def codecesar(texte: str , rotation: int) -> str:
+    '''Code un texte en utilisant césar.
     
+    '''
+    # variables locales
+    copie = ''
+    # alph = 'abcdefghijklmnopqrstuvwxyz'
+    for car in texte:
+        if car in alph:
+            car = cesar(car, rotation)
+        copie += car
+    return copie
+
+def cryptanalyse(texte:str) -> str:
+    '''Casse le code en utilisant l'analyse des fréquences.
+    '''
+    tex = td8.sansdoublons(texte)
+    compteurs = td8.comptertout(texte)
+    m = max(compteurs)
+    car = tex[indice(m, compteurs)]
+    rot =  indice('e', alph) - indice(car, alph)
+    return codecesar(texte, rot)
+
+
 if __name__ == '__main__':
-    import td7.td7_2sol as td7
-    # VARIABLES GLOBALES
-    path = 'appels.csv'
-    code = 'utf-8'
-    with open(path, encoding=code) as gf:
-        contenu = gf.read().strip()
+    import doctest as dt
+    import td8
+    from td5.td5_sol import indice
     
-    listeDesAppels = analyser(contenu)
-    etendre(listeDesAppels)
-    print(backtotext(listeDesAppels))
+    dt.testmod()
+    with open('cmessage.txt', encoding='utf-8') as ms:
+        ctexte = ms.read()
+        texte = cryptanalyse(ctexte)
+        print(texte)
+        
+    
+    

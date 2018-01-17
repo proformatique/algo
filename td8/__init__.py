@@ -137,7 +137,13 @@ def affichertout(texte: str):
 # programme principal
 if __name__ == "__main__":
     import doctest as dt
+    import matplotlib.pyplot as plt
+    
     dt.testmod()
     with open("data1.txt", encoding='utf-8') as fichier:
         contenu = fichier.read()
         affichertout(contenu)
+    x = range(len(sansdoublons(contenu)))
+    y = comptertout(contenu)
+    plt.bar(x, y)
+    plt.show()
