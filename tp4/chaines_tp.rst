@@ -13,3 +13,4 @@ TAF
     
 .. automodule:: tp4
     :members:
+    :autodoc_member_order: bysource

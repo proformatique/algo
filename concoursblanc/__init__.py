@@ -50,10 +50,10 @@ def zigzag(mt):
 def printf(M):
     line = "{:0>2}|" * len(M[0])
     line2 = "{:0>2}+" * len(M[0])
-    print('+'+line2.format(*(['--']*len(M[0]))))
+    print('+' + line2.format(*(['--'] * len(M[0]))))
     for l in M:
-        print('|'+line.format(*l))
-        print('+'+line2.format(*(['--']*len(l))))
+        print('|' + line.format(*l))
+        print('+' + line2.format(*(['--'] * len(l))))
 
 
 def somme(M):
