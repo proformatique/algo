@@ -126,7 +126,11 @@ if __name__ == '__main__':
     from td5.td5_sol import indice
 
     dt.testmod()
-    with open('cmessage.txt', encoding='utf-8') as ms:
+    
+    with open('cmessage.txt', mode='r', encoding='utf-8') as ms:
         ctexte = ms.read()
         texte = cryptanalyse(ctexte)
         print(texte)
+    
+    with open('messagec.txt', mode='w', encoding='utf-8') as fs:
+        fs.write(texte)
