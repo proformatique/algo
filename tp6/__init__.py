@@ -1,3 +1,12 @@
+"""
+Tp6 - Chaînes de caractères & fichiers
+======================================
+
+Objectifs:
+    #. Manipuler les fichiers de données.
+    #. Manipuler les chaînes de caractères.
+"""
+
 
 __author__ = 'A. MHAMEDI'
 __version__ = '0.1'
@@ -91,11 +100,11 @@ def formater(temps: int, duree: bool) -> str:
 
     Examples
     --------
-    >>> format(2165, True)
+    >>> formater(2165, True)
     ('36min 05s', 0)
-    >>> format(2165, False)
+    >>> formater(2165, False)
     ('00:36:05', 0)
-    >>> format(32165, False)
+    >>> formater(32165, False)
     ('08:56:05', 0)
     """
     minutes = temps // 60
@@ -179,6 +188,8 @@ def backtotext(ll_contenu: list) -> str:
 
 
 if __name__ == '__main__':
+    import doctest as dt
+    dt.testmod(verbose=True)
     # VARIABLES GLOBALES
     PATH = 'appels.csv'
     DEST = 'data.csv'
