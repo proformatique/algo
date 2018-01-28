@@ -16,16 +16,15 @@ __version__ = '0.1'
 __author__ = 'A. MHAMEDI'
 
 
-
 # Parcours
 def palindrome(texte: str) -> bool:
     """Retourne True si texte se lit des deux sens par ex. s.o.s.
-    
+
     Parameters
     ----------
     texte:
         texte source à vérifier.
-    
+
     Returns
     -------
     pal :
@@ -89,7 +88,7 @@ def remplacer(mot1: str, mot2: str, texte: str) -> str:
     -------
     copie: str
         texte modifié
-    
+
     Examples
     --------
     >>> remplacer('im', '', 'impossible')
@@ -104,10 +103,10 @@ def remplacer(mot1: str, mot2: str, texte: str) -> str:
     n = len(mot1)
     m = len(mot2)
     while i < len(texte):
-        if n and mot1 == texte[i:i + n]: # lazy evaluation
+        if n and mot1 == texte[i:i + n]:  # lazy evaluation
             copie += mot2
-            #i += n # si n == 0 boucle infinie
-            i += n if n > m else m # pour la forme des cartes
+            # i += n # si n == 0 boucle infinie
+            i += n if n > m else m  # pour la forme des cartes
         else:
             copie += texte[i]
             i += 1

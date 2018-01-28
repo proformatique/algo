@@ -1,5 +1,5 @@
-TP5 - Les chaînes de caractères
-===============================
+TP6 - Chaînes de caractères & Fichiers
+======================================
 
 Solution
 -------------

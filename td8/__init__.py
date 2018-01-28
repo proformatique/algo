@@ -53,7 +53,7 @@ def sansdoublons(texte: str) -> str:
 
     Parameters
     ----------
-    texte : str
+    texte: str
         texte source
 
     Returns

@@ -8,6 +8,8 @@ TAF
     #. Définissez une fonction `enregistrer(texte: str, fichier: str) -> str` qui enregistre le texte dans un fichier.
     #. Ecrire le programme principal main.py qui permet de charger le contenu du fichier `appels.csv` et l'enregistrer dans un fihcier `data.csv` après avoir remplacé la durée par la date et l'heure de fin de chaque conversation.
 
+    .. image:: resultat.png
+    
 Etapes
 ------
     #. Décomposer le problème.
