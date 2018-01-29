@@ -1,10 +1,11 @@
-"""
+﻿"""
 Tp6 - Chaînes de caractères & fichiers
 ======================================
 
 Objectifs:
     #. Manipuler les fichiers de données.
     #. Manipuler les chaînes de caractères.
+    #. Utilider les méthodes str.join(), str.strip() et str.split()
 """
 
 
@@ -13,7 +14,7 @@ __version__ = '0.1'
 
 
 def charger(fichier: str) -> str:
-    '''Charge le fichier spécifié.
+    """Charge le fichier spécifié.
 
     Parameters
     ----------
@@ -23,14 +24,14 @@ def charger(fichier: str) -> str:
     Returns
     -------
     texte : contenu du fichier texte.
-    '''
+    """
     with open(fichier, encoding='utf-8') as file2read:
         texte = file2read.read()
         return texte.strip()
 
 
 def enregistrer(texte: str, fichier: str):
-    '''Enregistre le texte dans le fichier spécifié.
+    """Enregistre le texte dans le fichier spécifié.
 
     Parameters
     ----------
@@ -39,7 +40,7 @@ def enregistrer(texte: str, fichier: str):
     fichier :
         nom du fichier texte.
 
-    '''
+    """
     with open(fichier, mode='w', encoding='utf-8') as file2save:
         file2save.write(texte)
 
@@ -107,7 +108,7 @@ def formater(temps: int, duree: bool) -> tuple:
     >>> formater(32165, False)
     ('08:56:05', 0)
     """
-    
+
     minutes = temps // 60
     secondes = temps % 60
     heures = minutes // 60
@@ -127,7 +128,7 @@ def tempsdefin(date: str, temps: str, duree: str) -> tuple:
     """Calcule la date de fin.
 
     La date et l'heure après la conversation.
-    
+
     Parameters
     ----------
     date:
@@ -151,12 +152,21 @@ def tempsdefin(date: str, temps: str, duree: str) -> tuple:
 
 def analyser(contenu: str) -> list:
     """Analyse le contenu du fichier appels.csv.
-    
+
     Retourne un tableau à 2d de tous les champs.
+
     Parameters
     ----------
     contenu:
         texte à analyser.
+
+    Returns
+    -------
+    ll_contenu: list
+
+    Note
+    -----
+    Application de la méthode incrémentale
     """
     l_contenu = contenu.split('\n')
     ll_contenu = []
@@ -183,7 +193,6 @@ def etendre(ll_contenu: list):
             datetpl = tempsdefin(date, temps, duree)
             del ll_contenu[i][3]
             ll_contenu[i].extend(datetpl)
-    return ll_contenu
 
 
 def backtotext(ll_contenu: list) -> str:
@@ -202,14 +211,18 @@ def backtotext(ll_contenu: list) -> str:
     return seplignes.join(ll_contenu)
 
 
+def main():
+    """Combinaison des fonctions."""
+    path = 'appels.csv'
+    dest = 'data.csv'
+    contenutexte = charger(path)
+    listedesappels = analyser(contenutexte)
+    etendre(listedesappels)
+    contenutexte = backtotext(listedesappels)
+    enregistrer(contenutexte, dest)
+
+
 if __name__ == '__main__':
     import doctest as dt
     dt.testmod(verbose=True)
-    # VARIABLES GLOBALES
-    PATH = 'appels.csv'
-    DEST = 'data.csv'
-    contenutexte = charger(PATH)
-    listedesappels = analyser(contenutexte)
-    listedesappels = etendre(listedesappels)
-    contenutexte = backtotext(listedesappels)
-    enregistrer(contenutexte, DEST)
+    main()
