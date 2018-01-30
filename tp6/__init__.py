@@ -96,7 +96,7 @@ def formater(temps: int, duree: bool) -> tuple:
 
     Note
     ----
-    00mins 00s pour la durée.
+    00min 00s pour la durée.
     00:00:00 pour le temps.
 
     Examples
@@ -110,18 +110,18 @@ def formater(temps: int, duree: bool) -> tuple:
     """
 
     minutes = temps // 60
-    secondes = temps % 60
     heures = minutes // 60
     jours = heures // 24
+    secondes = temps % 60
     if duree:
         forme = '%02dmin %02ds'
         data = minutes, secondes
     else:
         minutes %= 60
-        heures %= 24
+        heures %= 24  # modulo
         forme = '%02d:%02d:%02d'
         data = heures, minutes, secondes
-    return forme % data, jours
+    return forme % data, jours  # opérateur de formatage.
 
 
 def tempsdefin(date: str, temps: str, duree: str) -> tuple:
@@ -134,20 +134,20 @@ def tempsdefin(date: str, temps: str, duree: str) -> tuple:
     date:
         sous la fome jj/mm/aaaa.
     temps:
-        sous la forme HH:MM:SS.
+        sous la forme 00:00:00.
     duree:
         sous la forme 00min 00s.
     Returns
     -------
-    tempsdefin: str
-    jourok: int
+    datedefin: str
+    heuredefin: int
     """
     temps = tempsensecondes(temps)
     duree = tempsensecondes(duree)
-    heurefin, jourok = formater(temps + duree, False)
+    heuredefin, jourok = formater(temps + duree, False)
     # datedefin = datesuivante(*datetuple(date)) if jourok else date
     datedefin = "Le lendemain" if jourok else date
-    return datedefin, heurefin
+    return datedefin, heuredefin
 
 
 def analyser(contenu: str) -> list:
@@ -191,13 +191,12 @@ def etendre(ll_contenu: list):
         else:
             date, temps, duree = ligne[1:]
             datetpl = tempsdefin(date, temps, duree)
-            del ll_contenu[i][3]
-            ll_contenu[i].extend(datetpl)
+            del ll_contenu[i][3]  # supprime la durée.
+            ll_contenu[i].extend(datetpl)  # ajoute les éléments du tuple.
 
 
 def backtotext(ll_contenu: list) -> str:
-    """
-    Transforme la liste de listes en chaîne de caractères.
+    """Transforme la liste de listes en chaîne de caractères.
 
     Parameters
     ----------
