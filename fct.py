@@ -1,15 +1,12 @@
 # -*- coding: utf-8 -*-
-"""Created on Tue Jan 30 20:14:52 2018
-
-
-Tp7 : Techniques de conception d'algorithmes.
-################################################
-
+"""Tp : titre.
+##############
+Created on Sun Feb  4 10:37:21 2018
+@author: TOMI
 Objectifs
 -----------
-    #. Utiliser l'analyse descendante pour résoudre un problème.
-    #. Modulariser le code.
-    #. Programmer la date du lendemain.
+    #. Utiliser .
+    #. Programmer .
 
 """
 
@@ -34,9 +31,16 @@ def main() -> type:
     Notes
     -----
     '''
-
+# Définition
+def f(x):
+    y = x * 2
+    return y
+# Appel
+f(3)
+    
 
 if __name__ == '__main__':
     import doctest as dt
     dt.testmod()
     main()
+
