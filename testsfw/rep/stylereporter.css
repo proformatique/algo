@@ -1,0 +1,124 @@
+h1.classe{
+  padding: 10px;
+  border: #ff9200 1px solid;
+  color: #ac0b03;
+  background-color: #f1c88a;
+  text-align: center;
+  text-shadow: aqua 5px;
+  box-shadow: 1px 3px 15px 1px black;
+}
+
+h1{
+  padding-left: 5px;
+  border: antiquewhite 1px solid;
+  color: #e05b54;
+  background-color: blanchedalmond;
+}
+div.errors div {
+  box-shadow: 0px 1px 0.5px 1px lightgray;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding-left: 30px;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  background-color: #fff7f7;
+  color: #6e0c0c;
+  margin: 3px;
+   background-image: url("python.ico");
+   background-repeat: no-repeat;
+  background-size: 20px;
+  background-position-x: right;
+}
+div.errors div:hover {
+  color: #6e0c0c;
+  background-image: url("python.ico");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position-x: left;
+  background-color: #ff060699;
+  margin: 3px;
+  font-size: 120%;
+}
+
+
+@media only screen {
+    div.code{
+        margin: 5px;
+        padding: 10px;
+        font-weight: 900;
+        font-size: 160%;
+        background-image: url("py.ico");
+        background-repeat: no-repeat;
+        background-size: 40px;
+        background-position-x: right;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 30px;
+        background-color: #feebb04f;
+        border-width: 1px;
+        border-style: solid;
+        box-shadow: 1px 2px 3px 1px gray;
+        color: #4e4e4e;
+}
+div.code pre{
+    color: #666666;
+
+}
+
+div.code pre:hover {
+    color: #000;
+    background-color: #F0F0F0;
+
+}}
+
+div.code pre:hover {
+    margin-top: 0px;
+    margin = 0px;
+    font-weight: 900;
+    margin-bottom: 0px;}
+
+div.code pre{
+    padding-left:10px;
+    margin = 0px;
+    font-weight: 900;
+    white-space: pre;
+    margin-top: 0px;
+    margin-bottom: 0px;}
+
+div.code{
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 1px 2px 3px 1px gray;
+    overflow: visible;
+    word-break: break-all;
+    margin: 5px;
+    padding: 10px;
+    font-weight: 900;
+    font-size: 140%;}
+    
+@media only print{
+  .hideprint{display:none}
+  @media only print{
+  .hideprint{display:none}
+div.code, div.code pre{
+    padding-left:1px;
+    padding-top:0px;
+    padding-bottom:0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin = 0px;
+    font-weight: normal;
+    white-space: pre;
+    font-size:100%;
+    margin = 0px;
+    line-size:1;
+    }
+   
+  }
+  }
+  
+code{
+    overflow: visible;
+    word-break: break-all;
+    }

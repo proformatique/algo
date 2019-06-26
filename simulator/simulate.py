@@ -20,6 +20,8 @@ En utilisant la machine:
 <li>Transformez le script en sous-programme def identifiant(params)</li>
 </ol>
 """
+
+
 class varlist:
     seps = '##s:'
     sepi = '#i:'
@@ -30,7 +32,7 @@ class varlist:
     webdist = './dist/'
     demodist = r"E:\lydex\local\algo\demos" + '\\'
     src = './source/'
-    
+
     count = 0
     def __init__(self, data, ok=True, s=True):
         self.datanames = data

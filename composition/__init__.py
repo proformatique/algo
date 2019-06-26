@@ -9,7 +9,7 @@ def comptertous(n: int) -> list:
     -------
     compteurs : list
         list des nombres des chiffres de n.
-		
+
     Examples
     --------
     >>> comptertous(45)
@@ -38,7 +38,7 @@ def distincts(n: int) -> bool:
     -------
     dist : bool
         True si les chiffres de n sont distincts, False sinon.
-		
+
     Examples
     --------
     >>> distincts(45)
@@ -59,6 +59,7 @@ def distincts(n: int) -> bool:
             dist = False
             break
     return dist
+
 
 if __name__ == "__main__":
     import doctest as dt

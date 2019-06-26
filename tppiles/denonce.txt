@@ -1,0 +1,17 @@
+p184. 004 ALB
+Soit P = (a1, ..., an) une pile non vide de n éléments (avec a1 le sommet de la pile). On désire former la pile P' = (a2, ..., an, a1). Cette opération s'appelle la rotation d'une pile. Programmer en Python la fonction rotation() pour les différentes implémentations du type pile que nous avons rencontrées.
+
+Nous considérons les expressions arithmétiques (constituées seulement d'entiers et des opérations '+' et '*' pour simplifier) sous forme postfixée.
+Ansi, la séquence 7 2 + 3 * représente l'expression (7+2)*3 et la séquence 5 3 9 + * représente 5*(3+9).
+1° Nous allons tout d'abord évaluer de telles expressions (c.à.d renvoyer 27 et 60 pour les expressions précédentes, par exemple) et illustrer l'utilisation d'une pile comme structure auxilière.
+A l'aide des fonctions de manipultaion du type abstrait pile, programmer une fonction evaluer() qui réalise, de façon impérative, l'évaluation d'une expression arithmétique postfixée. Cette dernière et codée sous la forme de liste de chaînes de caractères qui sont de deux types opérateur ("+", "*") ou nombre "n" avec n entier. La fonction lit sucessivement de gauche à droite les éléments de la liste. La pile lui sert à stocker des résultats intermédiaires. Dans le détail, elle empile les entiers jusqu'à rencontrer un opérateur arithmétique. Elle dépie alors les deux arguments de l'opérateur qui doivent (si l'expression en entrée est correcte) se trouver en haut de la pile; elle effectue et enmpile le résultat. À la fin de la lecture, la pile contient le résultat de l'évaluation en son somment.
+Par exemple, pour l'expression 7 2 + 3 *, les étapes de l'évalutaion sont :
+evaluer lit 7 et l'empile sur une pile vide,
+lit et empile 2,
+lit l'opérateur +, dépile le 2 puis le 7, réalise l'addition et empile le résultat 9,
+lit le 3 et l'empile,
+lit l'opérateur *, dépile le 3 puis le 9, réalise la multiplication et empile le résultat 27,
+on est alors à la fin de la liste, evaluer() rend le sommet de la pile : 27.
+2° Comment modifier la fonction précédente pour réaliser une fonction convertissant la notation postfixée en notation infixée? (si 7 2 + 3 * (resp. 5 3 9 + *))
+La notation postfixée de l'expression arithmétique alors ((7+2)*3 (resp. 5*(3+9)) est ça notation infixée totalement parenthésée).
+

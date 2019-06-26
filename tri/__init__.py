@@ -1,4 +1,4 @@
-def enOrdreDecroissant(T: list):
+def enOrdreDecroissant(T: list) -> bool:
     """Retourne True si T est en ordre décroissant.
 
     >>> tab = [12, 15, 30, 45, 46, 79]
@@ -15,7 +15,7 @@ def enOrdreDecroissant(T: list):
     return ord
 
 
-def enOrdreCroissant(T: list):
+def enOrdreCroissant(T: list) -> bool:
     """Retourne True si T est en ordre croissant.
 
     >>> tab = [12, 15, 30, 45, 46, 79]
@@ -32,7 +32,7 @@ def enOrdreCroissant(T: list):
     return ord
 
 
-def enOrdre(T: list):
+def enOrdre(T: list) -> bool:
     """Retourne True si T est trié.
 
     >>> tab = [12, 12, 12, 12, 12, 12]
@@ -53,7 +53,7 @@ def enOrdre(T: list):
     return i == fin
 
 
-def dichotomie(T: list, v: float):
+def dichotomie(T: list, v: float) -> int:
     """Recherche dichotomique.
 
     Parameters

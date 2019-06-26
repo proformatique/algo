@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""TP4 : chaînes de caractères.
+"""TP4.
+
+Chaînes de caractères.
 ================================
 
 Objectifs :
@@ -10,33 +12,49 @@ Objectifs :
     #. Supprimer les espaces superflues d'une chaîne de caractères
 """
 
-__author__ = 'A. MHAMEDI'
 __version__ = '0.1'
+__author__ = 'A. MHAMEDI'
 
 
 # Parcours
 def palindrome(texte: str) -> bool:
-    """Retourne True si texte se lit des deux sens par ex. s.o.s
+    """Retourne True si texte se lit des deux sens par ex. s.o.s.
+
+    Parameters
+    ----------
+    texte:
+        texte source à vérifier.
+
+    Returns
+    -------
+    pal :
+        True si le texte est un palindrome, sinon False.
 
     Examples
     --------
     >>> palindrome('S.O.S')
     True
     """
+    for i in range(len(texte)//2):
+        if texte[i] != texte[~i]:
+            return False
+    return True
 
 
 # Copie
 def inverser(texte: str) -> str:
-    """Retourne une version de texte à l'envers
+    """Retourne une version de texte à l'envers.
 
     Parameters
     ----------
-    texte : str
+    texte :
         texte source
+
     Returns
     -------
-    copie : str
+    copie :
         texte à l'envers
+
     Examples
     --------
     >>> inverser('s.o.s')
@@ -55,18 +73,22 @@ def inverser(texte: str) -> str:
 
 
 def remplacer(mot1: str, mot2: str, texte: str) -> str:
-    """Retourne une version de texte avec mot2 au lieu de mot1
+    """Retourne une version de texte avec mot2 au lieu de mot1.
 
     Parameters
     ----------
-    texte : str
+    texte :
         texte source
-    mot1 : str
+    mot1 :
         mot à remplacer
+    mot2 :
+        mot de remplacement
+    
     Returns
     -------
-    mot2 : str
-        mot de remplacement
+    copie: str
+        texte modifié
+
     Examples
     --------
     >>> remplacer('im', '', 'impossible')
@@ -81,9 +103,10 @@ def remplacer(mot1: str, mot2: str, texte: str) -> str:
     n = len(mot1)
     m = len(mot2)
     while i < len(texte):
-        if n and mot1 == texte[i:i + n]:
+        if n and mot1 == texte[i:i + n]:  # lazy evaluation
             copie += mot2
-            i += m if m > n else n
+            # i += n # si n == 0 boucle infinie
+            i += n if n > m else m  # pour la forme des cartes
         else:
             copie += texte[i]
             i += 1
@@ -93,6 +116,9 @@ def remplacer(mot1: str, mot2: str, texte: str) -> str:
 # Recherche
 def estrotation(mot1: str, mot2: str) -> bool:
     """Vérifie si le mot2 est une rotation de mot1.
+    
+    :param mot1: premier mot
+    :param mot2: deuxième mot
 
     Examples
     --------
@@ -101,6 +127,29 @@ def estrotation(mot1: str, mot2: str) -> bool:
     """
     return len(mot1) == len(mot2) and mot1 in mot2 * 2
 
+def estrotation2(mot1: str, mot2: str) -> bool:
+    """Vérifie si le mot2 est une rotation de mot1.
+    
+    :param mot1: premier mot
+    :param mot2: deuxième mot
+
+    Examples
+    --------
+    >>> estrotation2('abcde', 'cdeab')
+    True
+    """
+    # return len(mot1) == len(mot2) and mot1 in mot2 * 2
+    i = 0
+    n = len(mot1)
+    m = len(mot2)
+    while i < n:
+        j = 0
+        while j < n and mot1[j] == mot2[(i + j) % n]:
+            j += 1
+        if j == n:
+            return True
+        i += 1
+    return False
 
 # Rotation
 def rotation(mot: str, decalage: int) -> str:
@@ -132,23 +181,27 @@ def supprimerEspaces(texte: str) -> str:
     copie = ''
     return copie
 
-
+# Partie II
 if __name__ == "__main__":
     import doctest as dt
-    dt.testmod(verbose=True)
-
+    dt.testmod(verbose=False)
+    # Q 1
+    with open('data0.txt', encoding='utf-8') as df:
+        for line in df:
+            print(inverser(line), end='')
+    # Q 2
     with open(r'contacts\contacts.ctc', encoding='utf-8') as fictc:
-        contacts = fictc.read()
-
+        model = fictc.read()
+    
     with open(r'contacts\data.vip', encoding='utf-8') as ficvip:
         for ligne in ficvip:
-            if 'nom' in ligne:
-                motsaremplacer = ligne.split()
+            if 'nom' in ligne: # première ligne dans le fichier data.vip
+                motsaremplacer = ligne.split() # liste des mots
                 continue
-            remplacants = ligne.split()
-            contact = contacts
+            remplacants = ligne.split() # le reste des lignes
+            modelmodif = model
             for i in range(len(motsaremplacer)):
                 mot1 = motsaremplacer[i]
                 mot2 = remplacants[i]
-                contact = remplacer(mot1, mot2, contact)
-            print(contact, '\n' * 2)
+                modelmodif = remplacer(mot1, mot2, modelmodif)
+            print(modelmodif, '\n' * 2)
