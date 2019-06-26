@@ -4,17 +4,18 @@ def koch(t, order, size):
     if order == 0:
         t.fd(size)
     else:
-        koch(t, order-1, size/3)
         t.lt(60)
         koch(t, order-1, size/3)
         t.rt(120)
         koch(t, order-1, size/3)
-        t.lt(60)
+        t.rt(120)
         koch(t, order-1, size/3)
+        
+        
 
 
 t.up();t.goto(-300, 0); t.down()
-koch(t, 4, 500)
+koch(t, 1, 500)
 
 def rfactorielle(n):
     """Ex3
