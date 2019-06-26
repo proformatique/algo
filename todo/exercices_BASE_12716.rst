@@ -1,11 +1,7 @@
-Révision
---------
-Ecrivez le code permettant d'implémenter la somme suivante
-
 #. :math:`S = {\displaystyle \sum _{k=1}^n k}`, telle que :math:`0 \leq S \leq n^2`
 
 
-Définissez des fonctions qui représentent les deux parties de l'équation pour vérifier que
+Définissez des fonctions qui représentent les deux parties de l'équatio pour vérifier que
 
 #. :math:`\sum _{{k=1}}^{n}k^{2}={\frac  {(2n+1)(n+1)n}6}`.
 #. :math:`{\displaystyle \sum _{k=1}^{n}k^{3}={\frac {n^{2}(n+1)^{2}}{4}}}`
@@ -47,40 +43,15 @@ Question 4.	Ecrire une fonctionretourne True si le tableau T représente une ét
 
 Question 5.	Ecrire une fonction qui retourne la somme des éléments d'un segment entre (i_d,j_d), et (i_f,j_f), avec:
 
-<<<<<<< HEAD
-*	i_d ligne de début
-*	j_d colonne de début
-*	i_f ligne de fin
-*	j_f colonne de fin
-=======
 •	i_d ligne de début
 •	j_d colonne de début
 •	i_f ligne de fin
 •	j_f colonne de fin
->>>>>>> 2bba58c6df914aa62703b741fea73e0172007e3f
-
 (*sans faire appel aux autres fonctions)
 
 .. code:: python
 
     def sommeSegment(id, j_d, i_f, j_f):
-    
-Une solution possible
-----------------------
-
-.. literalinclude:: DS_EMAGIQUE.py
-   :encoding: utf-8
-   :language: python
-   :linenos:
-   :lines: 1-63    
-   
-   
-.. 1,3,5-10,20-
-..   :emphasize-lines: 12,15-18
-
-
---------------
-
 
 Question 6.	Ecrire une procédure qui permet de remplir un tableau comme dans l'illustration (cf. Figure 2 tableau T de 100 entiers). en combinant les codes des procédures précédentes (sans faire appel à ces procédures). en utilisant la boucle while.
 
@@ -89,20 +60,3 @@ Question 6.	Ecrire une procédure qui permet de remplir un tableau comme dans l'
     def remplissage2(tab):
 
 .. image:: spirale.png
-
-<<<<<<< HEAD
-----
-
-#. Définissez une fonction qui retourne la liste des nombres d'occurrences de chaque lettre *car* dans un texte *texte*.
-#. Définissez une fonction qui prend un *texte* et retourne une version sans doublons du texte *texte*.
-=======
-Une solution possible
-----------------------
-
-.. literalinclude:: DS_EMAGIQUE.py
-   :encoding: utf-8
-   :language: python
-   :linenos:
-   :lines: 64-    
-   
->>>>>>> 2bba58c6df914aa62703b741fea73e0172007e3f

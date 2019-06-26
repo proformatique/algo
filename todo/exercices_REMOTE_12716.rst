@@ -47,17 +47,10 @@ Question 4.	Ecrire une fonctionretourne True si le tableau T représente une ét
 
 Question 5.	Ecrire une fonction qui retourne la somme des éléments d'un segment entre (i_d,j_d), et (i_f,j_f), avec:
 
-<<<<<<< HEAD
-*	i_d ligne de début
-*	j_d colonne de début
-*	i_f ligne de fin
-*	j_f colonne de fin
-=======
 •	i_d ligne de début
 •	j_d colonne de début
 •	i_f ligne de fin
 •	j_f colonne de fin
->>>>>>> 2bba58c6df914aa62703b741fea73e0172007e3f
 
 (*sans faire appel aux autres fonctions)
 
@@ -90,12 +83,6 @@ Question 6.	Ecrire une procédure qui permet de remplir un tableau comme dans l'
 
 .. image:: spirale.png
 
-<<<<<<< HEAD
-----
-
-#. Définissez une fonction qui retourne la liste des nombres d'occurrences de chaque lettre *car* dans un texte *texte*.
-#. Définissez une fonction qui prend un *texte* et retourne une version sans doublons du texte *texte*.
-=======
 Une solution possible
 ----------------------
 
@@ -105,4 +92,3 @@ Une solution possible
    :linenos:
    :lines: 64-    
    
->>>>>>> 2bba58c6df914aa62703b741fea73e0172007e3f
