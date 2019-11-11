@@ -60,7 +60,17 @@ Compter toutes les occurrences
 .. code-block:: python
 
     def compter(x, tab):
-        trouve = False
+        '''Retourne le minimum d'un tab.
+            Données
+                tab: list, tableau d'entiers
+                x : int, valeur à compter
+            Sorite
+                nombre : int, nombre d'occurences de x dans tab
+            Exemples
+            >>> compter(0, [0, 5, 8, 0]) == 2
+            True
+        '''
+        nombre = 0
     
 Minimum d'un tableau
 """"""""""""""""""""
