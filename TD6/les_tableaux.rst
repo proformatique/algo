@@ -56,6 +56,12 @@ Recherche de la première occurrence
 
 Compter toutes les occurrences
 """"""""""""""""""""""""""""""
+
+.. code-block:: python
+
+    def compter(x, tab):
+        trouve = False
+    
 Minimum d'un tableau
 """"""""""""""""""""
 .. code-block:: python
